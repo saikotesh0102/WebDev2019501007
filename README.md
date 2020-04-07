@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 # Web Development
-Time to create a Merge Conflict
+||||||| 15d52bf
+# Web Development
+=======
+# Web DevelopmentTo create a Merge Conflict
+>>>>>>> Test-Branch
