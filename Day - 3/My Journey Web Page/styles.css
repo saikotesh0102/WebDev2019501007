@@ -1,0 +1,57 @@
+h1 {
+    padding-top: 20px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+}
+
+/* body {
+    background-color: aqua;
+} */
+
+img {
+    width: 200px;
+    height: 200px;
+    padding-left: 10px;
+    border-radius: 25%;
+}
+
+.AboutMe {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: azure;
+}
+
+.Headings {
+    padding-right: 50px;
+    padding-top: 50px;
+    font-size: 30px;
+    text-align: left;
+    margin-left: 100px;
+}
+
+
+.Final {
+    width: 80%;
+    float: left; 
+}
+
+.Image {
+    width: 20%;
+    float: right;
+}
+
+.data {
+    font-size: 30px;
+    padding-left: 500px;
+    margin: 0px;
+}
+
+.temp {
+    padding-left: 150px;
+    margin: 0px;
+    font-size: 25px;
+    background-color: rgb(67, 112, 15);
+    background-clip: content-box;
+}
