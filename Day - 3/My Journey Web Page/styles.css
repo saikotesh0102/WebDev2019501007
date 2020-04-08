@@ -6,21 +6,14 @@ h1 {
 }
 
 /* body {
-    background-color: aqua;
+    background-color: rgb(19, 208, 214);
 } */
 
 img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     padding-left: 10px;
     border-radius: 25%;
-}
-
-.AboutMe {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    background-color: azure;
 }
 
 .Headings {
@@ -37,10 +30,10 @@ img {
     float: left; 
 }
 
-.Image {
+/* .Image {
     width: 20%;
-    float: right;
-}
+    float: left;
+} */
 
 .data {
     font-size: 30px;
@@ -52,6 +45,6 @@ img {
     padding-left: 150px;
     margin: 0px;
     font-size: 25px;
-    background-color: rgb(67, 112, 15);
+    background-color: white;
     background-clip: content-box;
 }
