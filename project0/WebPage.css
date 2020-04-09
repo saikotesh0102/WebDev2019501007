@@ -1,0 +1,24 @@
+.Center{
+	display : flex; 
+	justify-content: center; 
+	align-items : center;
+}
+
+/* #div1{
+	height : 100%;
+} */
+
+img{
+	padding : 10px;
+	/* border-radius : 20%; */
+	height : 500px;
+	width : 750px;
+}
+
+.Text{
+	font-size : 24px;
+	font-family : 'Times New Roman', Georgia, Times, serif;
+	text-align : left;
+	border : 10px;
+	margin : 30px;
+}
