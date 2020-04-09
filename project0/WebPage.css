@@ -5,14 +5,14 @@
 }
 
 /* #div1{
-	height : 100%;
+	height : 50%;
 } */
 
 img{
 	padding : 10px;
 	/* border-radius : 20%; */
 	height : 500px;
-	width : 1250px;
+	width : 75%;
 }
 
 .Text{
@@ -22,3 +22,21 @@ img{
 	border : 10px;
 	margin : 30px;
 }
+
+@media print {
+	.Screen{
+		display : none;
+	}
+}
+
+/* @media (min-width: 500px) {
+	body {
+		background-color: red;
+	}
+}
+
+@media (max-width: 499px) {
+	body {
+		background-color: blue;
+	}
+} */
