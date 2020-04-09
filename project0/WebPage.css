@@ -8,6 +8,16 @@
 	height : 50%;
 } */
 
+h1 {
+	text-align : center;
+	color : rgb(7, 116, 179);
+	font-size : 36px;
+	font-family : Georgia, 'Times New Roman', Times, serif;
+	border : burlywood; 
+	background-color : turquoise;
+	padding : 10px;
+}
+
 img{
 	padding : 10px;
 	/* border-radius : 20%; */
