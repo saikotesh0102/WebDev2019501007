@@ -1,0 +1,22 @@
+$color : green;
+
+.row > div {
+        padding : 20px;
+        background-color : skyblue;
+        border : 2px solid black;
+	}
+
+%bold{
+	font-weight : bold;
+}
+
+.col-4, .col-3{
+	@extend %bold;
+}
+
+h1{
+	color : $color;
+	background-color : aqua;
+	text-align : center;
+	padding : 10px;
+}

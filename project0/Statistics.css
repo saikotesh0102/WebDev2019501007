@@ -1,0 +1,17 @@
+.row > div {
+  padding: 20px;
+  background-color: skyblue;
+  border: 2px solid black;
+}
+
+.col-4, .col-3 {
+  font-weight: bold;
+}
+
+h1 {
+  color: green;
+  background-color: aqua;
+  text-align: center;
+  padding: 10px;
+}
+/*# sourceMappingURL=Statistics.css.map */
