@@ -22,7 +22,7 @@ img{
 	padding : 10px;
 	/* border-radius : 20%; */
 	height : 500px;
-	width : 75%;
+	width : 60%;
 }
 
 .Text{
@@ -31,14 +31,20 @@ img{
 	text-align : left;
 	border : 10px;
 	margin : 30px;
-	background-color : rgb(7, 179, 84);
-	color : darkslateblue;
+	/* background-color : rgb(7, 179, 84); */
+	color : ghostwhite;
 }
 
 @media print {
 	.Screen{
 		display : none;
 	}
+}
+
+body{
+	background-image : url("images/download.jpg");
+	background-repeat : no-repeat;
+	background-size : cover;
 }
 
 /* @media (min-width: 500px) {
