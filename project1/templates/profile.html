@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Profile Page
+		</title>
+	</head>
+
+	<body>
+		Thank you for Registering.
+		<p>
+            Your Details are :
+            <ul>    
+                {% for d in notesdata : %}
+                <li>
+                    {{ d }}
+                </li>
+                {% endfor %}
+            </ul>
+        </p>
+	</body>
+</html>

@@ -34,8 +34,7 @@
 				<div class = "col-lg-6">
 					<div id = "ui">
 						<h1 class = "text-center"> Register Your Account </h1>
-						<form class = "form-group text-center">
-
+						<form class = "form-group text-center" method = "POST">
 							<div class = "row">
 								<div class = "col-lg-6">
 									<label> First Name </label>
@@ -59,7 +58,7 @@
 
 								<div class = "col-lg-6">
 									<label> Retype Your Password</label>
-									<input type = "password" name = "password" class = "form-control" placeholder = "Retype Your password">
+									<input type = "password" name = "repassword" class = "form-control" placeholder = "Retype Your password">
 								</div>
 							</div>
 							<br>
@@ -70,7 +69,7 @@
 								<option> Others </option>
 							</select>
 							<br>
-							<input type = "submit" name = "submit" value = "submit" class = "btn btn-primary btn-block btn-lg">
+							<input type = "submit" name = "submit" value = "Submit" class = "btn btn-primary btn-block btn-lg" onclick = "register()">
 						</form>
 					</div>
 				</div>
