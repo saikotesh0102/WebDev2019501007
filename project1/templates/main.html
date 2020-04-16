@@ -11,9 +11,9 @@
 			<h1> Login Here </h1>
 			<form method = "POST" action = "Login">
 				<p> User Name </p>
-				<input type = "text" name = "UserName" placeholder = "Enter User Name">
+				<input type = "text" name = "UserName" placeholder = "Enter User Name" required>
 				<p> Password </p>
-				<input type = "password" name = "Password" placeholder = "Enter Password">
+				<input type = "password" name = "Password" placeholder = "Enter Password" required>
 				<input type = "submit" name = "submit" value = "Login">
 				<a href = "#"> Lost Your Password?</a><br>
 				<a href = "{{ url_for('register')}}"> Don't have an Account?</a>
