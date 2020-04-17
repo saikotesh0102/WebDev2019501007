@@ -1,11 +1,12 @@
 import os
-import logging
+import hashlib
 
 from flask import Flask, session, render_template, request, redirect
 from flask_session import Session
-import hashlib
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from datetime import datetime
+from models import *
 
 app = Flask(__name__)
 
