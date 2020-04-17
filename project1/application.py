@@ -6,9 +6,10 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
-from models import *
+from users import *
+from create import *
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
@@ -20,8 +21,13 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Set up database
-engine = create_engine(os.getenv("DATABASE_URL"))
-db = scoped_session(sessionmaker(bind=engine))
+# engine = create_engine(os.getenv("DATABASE_URL"))
+# db = scoped_session(sessionmaker(bind=engine))
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# app.app_context()
+# db.init_app(app)
+# db.create_all()
 
 @app.route("/", methods = ['GET', 'POST'])
 @app.route("/login", methods = ['GET', 'POST'])
@@ -46,6 +52,13 @@ def register():
         if password == repassword:
             session["data"].append(name)
             session["data"].append(email)
+            session["data"].append(password)
+            user = User(email, name, password)
+            try:
+                db.session.add(user)
+            except:
+                return render_template("registration.html")
+            db.session.commit()
             return render_template("profile.html",fullname = session["data"][0])
         else:
             return render_template("registration.html")
@@ -53,3 +66,8 @@ def register():
 @app.route("/profile", methods = ['GET', 'POST'])
 def profile():
     return render_template("profile.html")
+
+@app.route("/admin")
+def admin():
+    users = User.query.order_by("timestamp").all()
+    return render_template("admin.html", users = users)
