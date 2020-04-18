@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from database import User
+from models import *
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
