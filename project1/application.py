@@ -1,7 +1,7 @@
 import os
 import hashlib
 
-from flask import Flask, session, render_template, request, redirect
+from flask import Flask, session, render_template, request, redirect, url_for
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -31,16 +31,26 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 @app.route("/", methods = ['GET', 'POST'])
 @app.route("/login", methods = ['GET', 'POST'])
-def index():
+def login():
     if request.method == 'GET':
         return render_template("main.html")
+    elif request.method == "POST":
+        email = request.form.get('email')
+        pwd = request.form.get('password')
+        password = hashlib.md5(pwd.encode()).hexdigest()
+        user = User.query.get(email)
+        if user is not None:
+            if email == user.email and password == user.password:
+                name = "Thank You for Logging In"
+                return render_template("dashboard.html", name = name)
+        return redirect(url_for("register"))
 
 @app.route("/register", methods = ['GET', 'POST'])
 def register():
     if request.method == 'GET':
         return render_template("registration.html")
     elif request.method == 'POST':
-        session["data"] = []
+        # session["data"] = []
         fname = request.form.get('firstname')
         lname = request.form.get('lastname')
         name = fname + " " + lname
@@ -50,18 +60,20 @@ def register():
         repwd = request.form.get('repassword')
         repassword = hashlib.md5(repwd.encode()).hexdigest()
         if password == repassword:
-            session["data"].append(name)
-            session["data"].append(email)
-            session["data"].append(password)
+            # session["data"].append(name)
+            # session["data"].append(email)
+            # session["data"].append(password)
             user = User(email, name, password)
             try:
                 db.session.add(user)
             except:
-                return render_template("registration.html")
+                name = "Registration Unsuccessful. Please Register Again"
+                return render_template("registration.html", name = name)
             db.session.commit()
-            return render_template("profile.html",fullname = session["data"][0])
+            return redirect(url_for("login"))
         else:
-            return render_template("registration.html")
+            name = "Entered Passwords Do Not Match. Please Register Again"
+            return render_template("registration.html", name = name)
 
 @app.route("/profile", methods = ['GET', 'POST'])
 def profile():
@@ -71,3 +83,7 @@ def profile():
 def admin():
     users = User.query.order_by("timestamp").all()
     return render_template("admin.html", users = users)
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")

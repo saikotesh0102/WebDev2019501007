@@ -21,8 +21,6 @@ app1.app_context().push()
 
 db1.init_app(app1)
 
-
-
 class Book(db1.Model):
     __tablename__ = "BOOKS"
     isbn = db1.Column(db1.String, primary_key = True)
@@ -46,7 +44,6 @@ def main():
         # print(book.title)
         db1.session.add(book)
     db1.session.commit()
-
 
 if __name__ == "__main__":
     main()

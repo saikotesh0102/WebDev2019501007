@@ -6,14 +6,15 @@
 	</head>
 
 	<body>
+		<div><h2 style = "text-align: center; color : ghostwhite;">{{ name }}</h2></div>
 		<div class = "loginbox">
 			<img src = "static/styles/images/icon.png" alt = "Avatar" class = "image">
 			<h1> Login Here </h1>
-			<form method = "POST" action = "Login">
-				<p> User Name </p>
-				<input type = "text" name = "UserName" placeholder = "Enter User Name" required>
+			<form action = "{{ url_for('login')}}" method = "POST">
+				<p> Enter Your Email </p>
+				<input type = "text" name = "email" placeholder = "Enter Your Email" required>
 				<p> Password </p>
-				<input type = "password" name = "Password" placeholder = "Enter Password" required>
+				<input type = "password" name = "password" placeholder = "Enter Password" required>
 				<input type = "submit" name = "submit" value = "Login">
 				<a href = "#"> Lost Your Password?</a><br>
 				<a href = "{{ url_for('register')}}"> Don't have an Account?</a>
