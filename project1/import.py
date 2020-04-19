@@ -39,10 +39,12 @@ db1.create_all()
 def main():
     b = open("books.csv")
     books = csv.reader(b)
+    i = 0
     for ISBN, title, author, publicationyear in books:
-        book = Book(isbn = ISBN, title = title, author = author, publicationyear = publicationyear)
-        # print(book.title)
-        db1.session.add(book)
+        if i != 0:
+            book = Book(isbn=ISBN, title=title, author=author, publicationyear=publicationyear)
+            db1.session.add(book)
+        i = i + 1
     db1.session.commit()
 
 if __name__ == "__main__":
