@@ -1,0 +1,7 @@
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 16:50:25] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 16:50:25] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 16:50:52] "POST /auth HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 16:50:58] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 16:50:58] "GET /login HTTP/1.1" 200 -

@@ -1,6 +1,6 @@
 import os
 import hashlib
-
+import logging
 from flask import Flask, session, render_template, request, redirect, url_for
 from flask_session import Session
 from sqlalchemy import create_engine
@@ -17,12 +17,14 @@ if not os.getenv("DATABASE_URL"):
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+logging.basicConfig(filename = 'logger.log', level = logging.DEBUG)
 
 # Set up database
 # engine = create_engine(os.getenv("DATABASE_URL"))
 # db = scoped_session(sessionmaker(bind=engine))
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+logging.debug("database sessions created")
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
