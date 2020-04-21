@@ -28,3 +28,20 @@ INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 18:48:43] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 18:49:10] "POST /auth HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 18:49:29] "GET /logout HTTP/1.1" 302 -
 INFO:werkzeug:127.0.0.1 - - [20/Apr/2020 18:49:29] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:29] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:29] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:29] "GET /static/styles/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:29] "GET /static/styles/images/icon.png HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:29] "GET /static/styles/images/image3.jpg HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:29] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:35] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:06:35] "GET /static/styles/images/image2.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:07:27] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:07:45] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:07:56] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:07] "POST /auth HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:19] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:19] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:41] "GET /admin HTTP/1.1" 200 -
