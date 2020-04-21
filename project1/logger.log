@@ -45,3 +45,7 @@ INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:07] "POST /auth HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:19] "GET /logout HTTP/1.1" 302 -
 INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:19] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:09:41] "GET /admin HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:33:34] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2020 11:33:34] "GET /login HTTP/1.1" 200 -
