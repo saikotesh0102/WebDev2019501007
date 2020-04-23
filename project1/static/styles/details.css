@@ -1,0 +1,148 @@
+*{
+	margin : 0px;
+	padding : 0px;
+}
+
+body{
+	background-image : linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("images/image6.jpg");
+	background-position : center;
+	background-repeat : no-repeat;
+	background-size : cover;
+	height : 100vh;
+}
+
+.name{
+	padding : 10px;
+	margin : 10px;
+	height : 10%;
+	border : 2px;
+	background-color : transparent;
+	position: relative;
+	transition : 0.6s ease;
+}
+
+.name h1{
+	text-align : center;
+	font-family : Georgia, 'Times New Roman', Times, serif;
+	font-size : 40px;
+	color : aqua;
+}
+
+.list{
+	position : absolute;
+	top : 20px;
+	right : 0;
+}
+
+.list ul{
+	list-style-type : none;
+	float : right;
+}
+
+.list ul li{
+	display : inline-block;
+}
+
+.list ul li a{
+	text-decoration : none;
+	font-size: 20px;
+	color : aqua;
+	padding : 5px 20px;
+	border : 1px solid transparent;
+	transition : 0.6s ease;
+}
+
+.list ul li a:hover{
+	background-color : ghostwhite;
+	color : black;
+}
+
+.Image{
+	padding : 10px;
+	margin : 10px;
+	height : 70%;
+	background-color : transparent;
+	width : 25%;
+	border : 2px;
+}
+
+.news{
+	background-color : transparent;
+	width : 70%;
+	height : 450px;
+	padding : 20px;
+	margin : 20px;
+	border : 2px;
+}
+
+.Book{
+	display: flex;
+}
+
+.content{
+	display: flex;
+}
+
+.details ul{
+	list-style-type : none;
+	font-size : 30px;
+	color : aqua;
+}
+
+.details{
+	background-color : transparent;
+	width : 50%;
+	height : 30%;
+	padding : 20px;
+	border : 2px;
+}
+
+.rating{
+	background-color : transparent;
+	width : 30%;
+	height : 30%;
+	padding : 20px;
+	border : 2px;
+}
+
+.rating ul{
+	list-style-type : none;
+	font-size : 30px;
+	color : aqua;
+}
+
+.review{
+	background-color : transparent;
+	width : 70%;
+	height : 30%;
+	padding : 20px;
+	border : 2px;
+}
+
+.button{
+	background-color : transparent;
+	width : 20%;
+	height : 8%;
+	padding : 20px;
+	margin : 20px;
+	border : 2px;
+	float : right;
+}
+
+.button ul{
+	list-style-type : none;
+	font-size : 30px;
+}
+
+.button ul li a{
+	color : aqua;
+	text-decoration : none;
+	padding : 5px 20px;
+	border : 1px solid transparent;
+	transition : 0.6s ease;
+}
+
+.button ul li a:hover{
+	background-color : ghostwhite;
+	color : black;
+}
