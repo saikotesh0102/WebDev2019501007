@@ -77,7 +77,10 @@ def admin():
 @app.route("/auth", methods = ["POST"])
 def verify():
     email = request.form.get('email')
-    pwd = request.form.get('password')
+    pwd =@app.route("/review")
+def review():
+   return render_template("rating.html")
+ request.form.get('password')
     password = hashlib.md5(pwd.encode()).hexdigest()
     user = User.query.get(email)
     if user is not None:
@@ -94,3 +97,7 @@ def logout():
     session.clear()
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
+
+@app.route("/review")
+def review():
+   return render_template("rating.html")
