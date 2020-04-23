@@ -40,8 +40,10 @@ def login():
             return render_template("dashboard.html", name = session.get("data"))
         return render_template("main.html")
 
+#registration page
 @app.route("/register", methods = ['GET', 'POST'])
 def register():
+    """register a user in to database"""
     if request.method == 'GET':
         return render_template("registration.html")
     elif request.method == 'POST':
@@ -57,6 +59,7 @@ def register():
             user = User(email, name, password)
             try:
                 db.session.add(user)
+                logging.debug("user successfully registered in db")
             except:
                 name = "Registration Unsuccessful. Please Register Again"
                 return render_template("registration.html", name = name)
@@ -81,6 +84,7 @@ def verify():
         if email == user.email and password == user.password:
             fullname = user.name
             session["data"] = email
+            logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
             return render_template("dashboard.html", name = name + " " + fullname)
     return redirect(url_for("register"))
@@ -88,4 +92,5 @@ def verify():
 @app.route("/logout")
 def logout():
     session.clear()
+    logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
