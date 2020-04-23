@@ -94,18 +94,20 @@ body{
 	width : 50%;
 	height : 30%;
 	padding : 20px;
+	margin : 20px;
 	border : 2px;
 }
 
-.rating{
+.overall{
 	background-color : transparent;
 	width : 30%;
 	height : 30%;
 	padding : 20px;
+	margin : 20px;
 	border : 2px;
 }
 
-.rating ul{
+.overall ul{
 	list-style-type : none;
 	font-size : 30px;
 	color : aqua;
@@ -113,10 +115,12 @@ body{
 
 .review{
 	background-color : transparent;
-	width : 70%;
+	width : 80%;
 	height : 30%;
 	padding : 20px;
 	border : 2px;
+	font-size : 30px;
+	color : aqua;
 }
 
 .button{
