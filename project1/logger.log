@@ -102,3 +102,111 @@ Traceback (most recent call last):
     self.wfile.write("%s: %s\r\n" % (keyword, value))
 IOError: [Errno 32] Broken pipe
 INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 12:27:39] "[37mGET /static/styles/stars.css HTTP/1.1[0m" 200 -
+DEBUG:root:database sessions created
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 18:54:49] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 18:54:50] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 18:54:50] "[37mGET /static/styles/images/icon.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 18:54:50] "[37mGET /static/styles/main.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 18:54:50] "[37mGET /static/styles/images/image3.jpg HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 18:54:57] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 869-701-927
+DEBUG:root:database sessions created
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:45:01] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:47:02] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:47:02] "[37mGET /static/styles/stars.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:47:11] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:47:12] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:47:13] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:47:13] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:47:23] "[37mGET /review HTTP/1.1[0m" 200 -
+DEBUG:root:database sessions created
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:50:25] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 19:50:25] "[37mGET /static/styles/stars.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 20:01:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 21:05:34] "[37mGET /review HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 21:06:08] "[37mGET /review HTTP/1.1[0m" 200 -
+DEBUG:root:database sessions created
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 869-701-927
+DEBUG:root:database sessions created
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/models.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 869-701-927
+INFO:werkzeug: * Detected change in '/home/krishna/Downloads/project/Web_Dev_2019501007/project1/application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Debugger PIN: 869-701-927

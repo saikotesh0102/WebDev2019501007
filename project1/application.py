@@ -6,7 +6,7 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
-from models import User
+from models import *
 from create import *
 
 # Check for environment variable
@@ -77,10 +77,7 @@ def admin():
 @app.route("/auth", methods = ["POST"])
 def verify():
     email = request.form.get('email')
-    pwd =@app.route("/review")
-def review():
-   return render_template("rating.html")
- request.form.get('password')
+    pwd = request.form.get('password')
     password = hashlib.md5(pwd.encode()).hexdigest()
     user = User.query.get(email)
     if user is not None:
@@ -100,4 +97,15 @@ def logout():
 
 @app.route("/review")
 def review():
-   return render_template("rating.html")
+    email = request.form.get('email')
+    review_det= Review.query.filter_by(email = email, isbn = isbn).first()
+    rating_one=review_det.rating
+    review=review_det.review
+    if(review == None):
+        review = ""
+    rate = request.form.get('rating')
+    rev = request.form.get('matter')
+    revs = Review(email, isbn, rate,rev)
+    db.session.add(revs)
+    db.session.commit()
+    return render_template("rating.html", rating_one=rating_one, review=review, rating= rating, bookName=Name)
