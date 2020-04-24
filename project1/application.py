@@ -4,7 +4,7 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
-from models import User
+from models import User, Review
 from create import *
 from bookimport import Book
 
@@ -98,7 +98,9 @@ def logout():
 @app.route("/book/<string:isbn>", methods = ["GET"])
 def get_book(isbn):
     response = bookreads_api(isbn)
-    return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"])
+    review = Review.query.get(isbn)
+    review = review.review
+    return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], Review = review)
 
 def bookreads_api(isbn):
     query = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "GeJUHhlmNf7PYbzeKEnsuw", "isbns": isbn})

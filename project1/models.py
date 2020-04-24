@@ -1,5 +1,6 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+from bookimport import *
 
 db = SQLAlchemy()
 
@@ -18,3 +19,18 @@ class User(db.Model):
 	
 	def __repr__(self):
 		return '<User %r>' % (self.email)
+
+class Review(db.Model):
+	__tablename__ = 'REVIEWS'
+	email = db.Column(db.String, db.ForeignKey("USERS.email"),primary_key = True)
+	isbn = db.Column(db.String, db.ForeignKey("BOOKS.isbn"))
+	rating = db.Column(db.Integer, nullable = True, default=0)
+	review = db.Column(db.String, nullable = True)
+	timestamp = db.Column(db.DateTime, nullable = False)
+
+	def __init__(self, email, isbn, rating, review):
+		self.email = email
+		self.isbn = isbn
+		self.rating = rating
+		self.review = review
+		self.timestamp = datetime.now()
