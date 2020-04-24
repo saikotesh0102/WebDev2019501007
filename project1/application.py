@@ -1,5 +1,5 @@
-import os, hashlib, logging, requests, json
-from flask import Flask, session, render_template, request, redirect, url_for
+import os, hashlib, logging, requests
+from flask import Flask, session, render_template, request, redirect, url_for, json, jsonify
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -97,25 +97,18 @@ def logout():
 
 @app.route("/book/<string:isbn>", methods = ["GET"])
 def get_book(isbn):
-    print(isbn)
-    book = get_book_by_isbn(isbn)
     response = bookreads_api(isbn)
-    return render_template("details.html")
+    return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"])
 
 def bookreads_api(isbn):
     query = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "GeJUHhlmNf7PYbzeKEnsuw", "isbns": isbn})
     logging.debug("Goodreads call success")
     response = query.json()
     response = response['books'][0]
-    # book_info = db.execute("SELECT name, author, year FROM books WHERE isbn = :isbn",{"isbn": isbn}).fetchall()
-    book_info = Book.query.get(isbn).all()
+    book_info = Book.query.get(isbn)
     logging.debug("DB query executed successfully")
-    # response = dict(response)
     response['name'] = book_info.title
     response['author'] = book_info.author
     response['year'] = book_info.publicationyear
     response['img'] = "http://covers.openlibrary.org/b/isbn/" + isbn + ".jpg"
     return response
-
-def get_book_by_isbn(isbn):
-    return Book.query.filter_by(isbn = isbn)
