@@ -2,23 +2,76 @@
 <html>
     <head>
         <Title> Rating Page </Title>
-        <link rel = "stylesheet" type = "text/css" href = "static/styles/stars.css">
+        <link rel = "stylesheet" type = "text/css" href = "stars.css">
     </head>
 
     <body>
         <!-- <div class="container"> -->
+          {% if {{rating_one}} == 0 -%}
+              checked1=""
+              checked2=""
+              checked3=""
+              checked4=""
+              checked5=""
+              display="style = 'display:none;'"
+              {% elif {{rating_one}} == 1 -%}
+              checked1=checked
+              checked2=""
+              checked3=""
+              checked4=""
+              checked5=""
+              matter = {{review}}
+              rating = {{rating}}
+              bookName = {{Name}}
+              {% elif {{rating_one}} == 2 -%}
+              checked1=""
+              checked2=checked
+              checked3=""
+              checked4=""
+              checked5=""
+              matter = {{review}}
+              rating = {{rating}};
+              bookName = {{Name}}
+              {% elif {{rating_one}} == 3 -%}
+              checked1=""
+              checked2=""
+              checked3=checked
+              checked4=""
+              checked5=""
+              matter = {{review}}
+              rating = {{rating}}
+              bookName = {{Name}}
+              {% elif {{rating_one}} == 4 -%}
+              checked1=""
+              checked2=""
+              checked3=""
+              checked4=checked
+              checked5=""
+              matter = {{review}}
+              rating = {{rating}}
+              bookName = {{Name}}
+              {% elif {{rating_one}} == 5 -%}
+              checked1=""
+              checked2=""
+              checked3=""
+              checked4=""
+              checked5=checked
+              matter = {{review}}
+              rating = {{rating}}
+              bookName = {{Name}}
+              {%- endif %}
             <div class="feedback">
               <!-- <h1>Please rate the book here</h1> -->
-              <div class="rating">
-                <input type="radio" name="rating" id="rating-5">
+              <form class="rating">
+                <input type="radio" name=5 id="rating-5" {{checked5}}>
                 <label for="rating-5"></label>
-                <input type="rad#rating-1:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }io" name="rating" id="rating-4">
+                <input type="radio" name=4 id="rating-4" {{checked4}}>
                 <label for="rating-4"></label>
-                <input type="radio" name="rating" id="rating-3">
+                <input type="radio" name=3 id="rating-3" {{checked3}}>
                 <label for="rating-3"></label>
-                <input type="radio" name="rating" id="rating-2">
+                <input type="radio" name=2 id="rating-2" {{checked2}}>
                 <label for="rating-2"></label>
-                <input type="radio" name="rating" id="rating-1">
+                <input type="radio" name=1 id="rating-1" {{checked1}}>
                 <label for="rating-1"></label>
                 <div class="emoji-wrapper">
                   <div class="emoji">
@@ -107,20 +160,20 @@
                   </svg>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
             <!-- <h1>Review Page</h1> -->
-            <h2 style="font-style: oblique;"font-style: oblique;-style: oblique;">Book Name</h2>
-            <h3 style="font-style: oblique;">Overall:   5.0/5.0   </h3>
+            <h2 style="font-style: oblique;"font-style: oblique;-style: oblique;">Book Name:{{bookName}}</h2>
+            <h3 style="font-style: oblique;">Overall:   {{rating}}/5.0   </h3>
           <!-- </div> -->
           <!-- <p><strong>Tip:</strong> </p> -->
           <form>
-          <button class='a' type="reset" value="Edit">Edit</button>
+          <button {{display}} class='a' type="reset" value="Edit" onclick = "style.display='none'">Edit</button>
           <!-- <br><br> -->
-          <textarea placeholder="Please review this book here..."></textarea>
+          <textarea name = 'matter' placeholder="Please review this book here...">{{matter}}</textarea>
           <br><br>
-          <button class='b' type="submit" value="Cancel">Cancel</button>
-          <button class='c' type="reset" value="Post">Post</button>
+          <button action = "{{url_for('get_book(isbn)')}}" class='b' type="submit" value="Cancel">Cancel</button>
+          <button method="POST"class='c' type="reset" value="Post">Post</button>
           </form>
     </body>
 </html>

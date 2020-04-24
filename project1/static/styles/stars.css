@@ -95,12 +95,11 @@
   flex-shrink: 0;
 }
 
-/* #rating-0:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
 #rating-1:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
 #rating-2:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
 #rating-3:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
 #rating-4:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
-#rating-5:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); } */
+#rating-5:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
 
 .feedback {
   max-width: 360px;
@@ -145,6 +144,10 @@ textarea {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 12px;s
+  border-radius: 12px;
+}
+
+.b,.c{
+  float: left;
 }
 
