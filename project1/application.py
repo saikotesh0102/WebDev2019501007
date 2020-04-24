@@ -1,6 +1,4 @@
-import os
-import hashlib
-import logging
+import os, hashlib, logging, requests, json
 from flask import Flask, session, render_template, request, redirect, url_for
 from flask_session import Session
 from sqlalchemy import create_engine
@@ -8,6 +6,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
 from models import User
 from create import *
+from bookimport import Book
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
@@ -86,7 +85,8 @@ def verify():
             session["data"] = email
             logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
-            return render_template("dashboard.html", name = name + " " + fullname)
+            # return render_template("dashboard.html", name = name + " " + fullname)
+            return redirect(url_for("get_book", isbn = '1416949658'))
     return redirect(url_for("register"))
 
 @app.route("/logout")
@@ -94,3 +94,28 @@ def logout():
     session.clear()
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
+
+@app.route("/book/<string:isbn>", methods = ["GET"])
+def get_book(isbn):
+    print(isbn)
+    book = get_book_by_isbn(isbn)
+    response = bookreads_api(isbn)
+    return render_template("details.html")
+
+def bookreads_api(isbn):
+    query = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "GeJUHhlmNf7PYbzeKEnsuw", "isbns": isbn})
+    logging.debug("Goodreads call success")
+    response = query.json()
+    response = response['books'][0]
+    # book_info = db.execute("SELECT name, author, year FROM books WHERE isbn = :isbn",{"isbn": isbn}).fetchall()
+    book_info = Book.query.get(isbn).all()
+    logging.debug("DB query executed successfully")
+    # response = dict(response)
+    response['name'] = book_info.title
+    response['author'] = book_info.author
+    response['year'] = book_info.publicationyear
+    response['img'] = "http://covers.openlibrary.org/b/isbn/" + isbn + ".jpg"
+    return response
+
+def get_book_by_isbn(isbn):
+    return Book.query.filter_by(isbn = isbn)

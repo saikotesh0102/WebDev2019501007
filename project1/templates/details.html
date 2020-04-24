@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Details Page</title>
-		<link rel = "stylesheet" type = "text/css" href = "D:\Study\MSIT\Introdution to Web Programming\project1\static\styles\details.css">
-		<link rel = "stylesheet" type = "text/css" href = "D:\Study\MSIT\Introdution to Web Programming\project1\static\styles\stars.css">
+		<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static',filename = 'styles/details.css') }}">
+		<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static',filename = 'styles/stars.css') }}">
 		<style> 
 			/*add full-width input fields*/ 
 			input[type=text], 
@@ -102,14 +102,14 @@
 				<div class = "list">
 					<ul>
 						<li><a href = "#"> Home </a></li>
-						<li><a href = "#"> Logout </a></li>
+						<li><a href = "{{ url_for('logout')}}"> Logout </a></li>
 					</ul>
 				</div>
 			</div>
 
 			<div class = "Book">
 				<div class = "Image">
-					<img src = "D:\Study\MSIT\Introdution to Web Programming\project1\static\styles\images\image5.jpg" alt = "">
+					<img src = "\static\styles\images\image5.jpg" alt = "Image of a Book">
 				</div>
 
 				<div class = "news">
