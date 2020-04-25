@@ -2493,3 +2493,11 @@ DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_cou
 DEBUG:root:Goodreads call success
 DEBUG:root:DB query executed successfully
 INFO:werkzeug:127.0.0.1 - - [25/Apr/2020 22:34:40] "GET /book?isbn=1416949658 HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2020 22:35:19] "GET / HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2020 22:35:26] "GET /book?isbn=1416949658 HTTP/1.1" 200 -
