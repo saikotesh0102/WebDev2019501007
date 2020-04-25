@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Search</title>
+	<title>Search</title>
 </head>
 
 <body>
@@ -13,14 +13,11 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="text-center text-warning">
-                            Search Your Book
-                        </h3>
+                        <h3 class="text-center text-warning">Search Your Book</h3>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                    </div>
+                    <div class="col-md-12" style="float: right;"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-8">
@@ -33,8 +30,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
-                    </div>
+                    <div class="col-md-4"></div>
                 </div>
                 <div class="row">
                     <div style="margin-top:40px" class="col-md-6">
@@ -53,12 +49,9 @@
                                     placeholder="Enter details to Search " class="form-control input-md">
                             </div>
                             <button class="btn btn-primary my-1">Search</button>
-
                         </form>
                     </div>
-                    <div class="col-md-6">
-                    </div>
-
+                    <div class="col-md-6"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-7">
@@ -78,9 +71,9 @@
                             </thead>
                             <tbody>
                                 {% for result in results %}
-                                <tr><a href={{result.isbn}}>
-                                        <td>{{result.title}}</td>
-                                        <td>{{result.isbn}}</td>
+                                <tr><a href={{isbn}}>
+                                        <td>{{title}}</td>
+                                        <td>{{isbn}}</td>
                                     </a>
                                 </tr>
                                 {% endfor %}

@@ -4,9 +4,7 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
-from models import User, Review
-from create import *
-from bookimport import Book
+from models import *
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
@@ -21,8 +19,6 @@ logging.basicConfig(filename = 'logger.log', level = logging.DEBUG)
 # Set up database
 # engine = create_engine(os.getenv("DATABASE_URL"))
 # db = scoped_session(sessionmaker(bind=engine))
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 logging.debug("database sessions created")
 
 @app.route("/", methods = ["GET", "POST"])
@@ -85,8 +81,8 @@ def verify():
             session["data"] = email
             logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
-            # return render_template("dashboard.html", name = name + " " + fullname)
-            return render_template("search.html")
+            return render_template("dashboard.html", name = name + " " + fullname)
+            # return render_template("search.html")
     return redirect(url_for("register"))
 
 @app.route("/logout")
@@ -116,9 +112,9 @@ def get_book():
         rate = request.form.get('rating')
         rev = request.form.get('matter')
         revs = Review(email, isbn, rate,rev)
-        total_rating = ((response["average_rating"] * response["reviews_count"]) + rate)/(response["reviews_count"] + 1)
-        response["average_rating"] = total_rating
-        response["reviews_count"] += 1
+        total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+        response["average_rating"] = str(total_rating)
+        response["reviews_count"] = str(int(response["reviews_count"]) + 1)
         db.session.add(revs)
         db.session.commit()
         return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name)
