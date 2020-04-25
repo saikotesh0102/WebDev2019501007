@@ -85,8 +85,8 @@ def verify():
             session["data"] = email
             logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
-            # return render_template("dashboard.html", name = name + " " + fullname)
-            return redirect(url_for("get_book", isbn = '1416949658'))
+            return render_template("dashboard.html", name = name + " " + fullname)
+            # return redirect(url_for("get_book"))
     return redirect(url_for("register"))
 
 @app.route("/logout")
@@ -95,8 +95,9 @@ def logout():
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
 
-@app.route("/book/<string:isbn>", methods = ["GET", "POST"])
-def get_book(isbn):
+@app.route("/book", methods = ["GET", "POST"])
+def get_book():
+    isbn = request.args.get('isbn')
     response = bookreads_api(isbn)
     email = session["data"]
     name = User.query.get(email)
