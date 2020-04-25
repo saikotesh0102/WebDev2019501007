@@ -106,9 +106,8 @@ def get_book():
             review = review_det.review
             return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rating_one, Review = review, name = name)
         else:
-            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", name = name)
+            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name)
     elif request.method == "POST":
-        print("Hello")
         rate = request.form.get('rating')
         rev = request.form.get('matter')
         revs = Review(email, isbn, rate,rev)
