@@ -95,11 +95,32 @@ def logout():
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
 
-@app.route("/book/<string:isbn>", methods = ["GET"])
+@app.route("/book/<string:isbn>", methods = ["GET", "POST"])
 def get_book(isbn):
     response = bookreads_api(isbn)
-    review = Review.query.filter_by(isbn = isbn).first()
-    return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"])
+    email = session["data"]
+    name = User.query.get(email)
+    name = name.name
+    # review = Review.query.filter_by(isbn = isbn).first()
+    review_det = Review.query.filter_by(email = email, isbn = isbn).first()
+    if request.method == "GET":
+        if review_det is not None:
+            rating_one = review_det.rating
+            review = review_det.review
+            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rating_one, Review = review, name = name)
+        else:
+            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", name = name)
+    elif request.method == "POST":
+        print("Hello")
+        rate = request.form.get('rating')
+        rev = request.form.get('matter')
+        revs = Review(email, isbn, rate,rev)
+        total_rating = ((response["average_rating"] * response["reviews_count"]) + rate)/(response["reviews_count"] + 1)
+        response["average_rating"] = total_rating
+        response["reviews_count"] += 1
+        db.session.add(revs)
+        db.session.commit()
+        return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name)
 
 def bookreads_api(isbn):
     query = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "GeJUHhlmNf7PYbzeKEnsuw", "isbns": isbn})

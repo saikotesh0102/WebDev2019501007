@@ -25,7 +25,7 @@ class Review(db.Model):
 	__tablename__ = 'reviews'
 	email = db.Column(db.String, ForeignKey("USERS.email"))
 	isbn = db.Column(db.String, ForeignKey("BOOKS.isbn"))
-	rating = db.Column(db.Integer, nullable = True, default=0)
+	rating = db.Column(db.Integer, nullable = True, default = 0)
 	review = db.Column(db.String, nullable = True)
 	# timestamp = db.Column(db.DateTime, nullable = False)
 
