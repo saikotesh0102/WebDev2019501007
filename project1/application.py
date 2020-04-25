@@ -85,8 +85,8 @@ def verify():
             session["data"] = email
             logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
-            return render_template("dashboard.html", name = name + " " + fullname)
-            # return redirect(url_for("get_book"))
+            # return render_template("dashboard.html", name = name + " " + fullname)
+            return render_template("search.html")
     return redirect(url_for("register"))
 
 @app.route("/logout")
