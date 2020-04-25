@@ -719,3 +719,534 @@ INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:20:15] "GET /book/1416949658?__debug
 INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:20:15] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:20:15] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:20:15] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:28:50] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:28:54] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:28:54] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:29:02] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:29:04] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:29:04] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:29:04] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:29:04] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:29:04] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:29:04] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:08] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:10] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:10] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:18] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:20] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:20] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:20] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:20] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:20] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:42:20] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:41] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:44] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:44] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:52] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:54] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:48:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:24] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:27] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:27] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:40] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:42] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:42] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:42] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:42] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:42] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:53:42] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:55:39] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:55:47] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:55:47] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:55:56] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:56:00] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:56:01] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:56:01] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:56:01] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:56:01] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:56:01] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:05] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:08] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:08] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:16] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:18] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:18] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:18] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:18] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:18] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:18] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:58:59] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:01] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:01] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:09] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:14] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:14] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:14] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:14] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:14] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 19:59:14] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:03] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:03] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:03] "GET /favicon.ico HTTP/1.1" 404 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:43] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:46] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:46] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:46] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:46] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:46] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 20:57:46] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\bookimport.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:21:46] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:21:48] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:21:48] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:23:35] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:24:07] "GET /book/1416949658 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:30:31] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:30:31] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:03] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:03] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:03] "GET /static/styles/images/icon.png HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:03] "GET /static/styles/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:03] "GET /static/styles/images/image3.jpg HTTP/1.1" 304 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:16] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:22] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:22] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:22] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:22] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:22] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:22] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:37:22] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:29] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:32] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:32] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:39] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:44] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:44] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:44] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:44] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:44] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:38:44] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:13] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:15] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:15] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:23] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:27] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:27] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:27] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:27] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:27] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:39:28] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:01] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:04] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:04] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:12] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:17] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:41:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:31] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:34] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:34] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:43] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:54] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:47:54] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:21] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:23] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:23] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:34] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:39] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:39] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:39] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:39] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:39] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:55:40] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:35] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:38] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:38] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:47] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:53] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:53] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:53] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:53] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:53] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 21:58:53] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:02] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:04] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:04] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:15] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:23] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:23] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:23] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:23] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:23] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:06:23] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:30] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:32] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:32] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:40] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:45] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:45] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:45] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:45] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:45] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:19:45] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:03] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:05] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:05] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:13] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:17] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:21:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:21] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:23] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:23] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:32] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:36] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:36] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:36] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:36] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:36] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:24:36] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:21] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:23] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:23] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:34] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:34] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:34] "GET /static/styles/main.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:34] "GET /static/styles/images/icon.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:34] "GET /static/styles/images/image3.jpg HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:44] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:48] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:48] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:48] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:48] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:48] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:26:48] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:23] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:23] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:46] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:51] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:51] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:51] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:51] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:51] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:28:51] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:35:58] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:05] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:05] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:13] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:17] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:36:17] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:26] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:29] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:29] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:36] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:41] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:41] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:41] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:41] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:41] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:43:41] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:22] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:24] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:24] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:32] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:37] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:37] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:37] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:37] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:37] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:45:37] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:46:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:46:49] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:46:49] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:46:49] "GET /static/styles/main.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:46:49] "GET /static/styles/images/icon.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:46:49] "GET /static/styles/images/image3.jpg HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:46:58] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:47:03] "GET /book/1416949658 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:47:03] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:47:03] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:47:03] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:47:03] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:47:03] "GET /book/1416949658?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:04] "GET / HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:06] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:06] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:14] "POST /auth HTTP/1.1" 302 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:18] "GET /book/1416949658 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:19] "GET /static/styles/stars.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:19] "GET /static/styles/details.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:49:19] "GET /static/styles/images/image6.jpg HTTP/1.1" 304 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:50:02] "GET /book/1416949658 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1416949658 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:51:14] "GET /book/1416949658?matter= HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:51:17] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Apr/2020 22:51:17] "GET /login HTTP/1.1" 200 -
