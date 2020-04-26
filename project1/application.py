@@ -94,3 +94,34 @@ def logout():
     session.clear()
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
+
+@app.route("/userreview", methods = ["POST"])
+def user_review():
+    if request.method == "POST":
+        if session.get("user_email"):
+            query = request.form.get("search_item")
+            users = User.query.filter(or_(User.email.ilike(query), User.name.ilike(query))).all()
+            rev = []
+            for user in users:
+	            rev = rev + Review.query.filter_by(email= user.email).group_by(Review.email,Review.isbn).order_by(Review.time_stamp.desc()).all()
+            try:
+                rev[0].isbn
+                return render_template("userreviews.html", rev=rev)
+            except Exception:
+                flash("No reviews so far","info")
+                return render_template("userreviews.html", rev=rev)
+        else :
+            flash("Please Login First", "info")
+            return redirect("/login")
+
+@app.route("/reviewsearch", methods = ["GET"])
+def review_search():
+    if request.method == "GET":
+        if session.get("user_email"):
+            return render_template("reviewsearch.html")
+        else :
+            flash("Please Login First", "info")
+            return redirect("/login")
+
+    else:
+        return "Post method is not allowed"
