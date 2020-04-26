@@ -1,13 +1,14 @@
 import os
 import hashlib
 import logging
-from flask import Flask, session, render_template, request, redirect, url_for
+from flask import Flask, session, render_template, request, redirect, flash, url_for
 from flask_session import Session
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, or_
 from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
-from models import User
-from create import *
+from models import *
+from create import app
+
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
@@ -22,9 +23,9 @@ logging.basicConfig(filename = 'logger.log', level = logging.DEBUG)
 # Set up database
 # engine = create_engine(os.getenv("DATABASE_URL"))
 # db = scoped_session(sessionmaker(bind=engine))
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-logging.debug("database sessions created")
+# app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# logging.debug("database sessions created")
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
@@ -98,12 +99,12 @@ def logout():
 @app.route("/userreview", methods = ["POST"])
 def user_review():
     if request.method == "POST":
-        if session.get("user_email"):
+        if session.get("data"):
             query = request.form.get("search_item")
             users = User.query.filter(or_(User.email.ilike(query), User.name.ilike(query))).all()
             rev = []
             for user in users:
-	            rev = rev + Review.query.filter_by(email= user.email).group_by(Review.email,Review.isbn).order_by(Review.time_stamp.desc()).all()
+                rev = rev + Review.query.filter_by(email= user.email).group_by(Review.email,Review.isbn).order_by(Review.time_stamp.desc()).all()
             try:
                 rev[0].isbn
                 return render_template("userreviews.html", rev=rev)
@@ -117,7 +118,7 @@ def user_review():
 @app.route("/reviewsearch", methods = ["GET"])
 def review_search():
     if request.method == "GET":
-        if session.get("user_email"):
+        if session.get("data"):
             return render_template("reviewsearch.html")
         else :
             flash("Please Login First", "info")
@@ -125,3 +126,6 @@ def review_search():
 
     else:
         return "Post method is not allowed"
+
+if __name__ == "__main__" :
+    app.run(debug=True)

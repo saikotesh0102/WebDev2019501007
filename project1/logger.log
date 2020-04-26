@@ -83,3 +83,108 @@ INFO:werkzeug:127.0.0.1 - - [23/Apr/2020 09:30:02] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
 INFO:werkzeug: * Restarting with stat
 DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 206-868-963
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 206-868-963
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:31:19] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:31:19] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:31:19] "GET /static/styles/main.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:31:20] "GET /static/styles/images/icon.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:31:20] "GET /static/styles/images/image3.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:31:48] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:31:48] "GET /static/styles/images/image2.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:28] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:51] "POST /auth HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:53] "POST /auth HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:53] "GET /auth?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:53] "GET /auth?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:53] "GET /auth?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:53] "GET /auth?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:32:53] "GET /auth?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:37:19] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:37:19] "GET /static/styles/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:37:19] "GET /static/styles/images/icon.png HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:37:19] "GET /static/styles/images/image3.jpg HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:37:45] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:37:45] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:37:56] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:38:12] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:38:12] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:41:24] "GET / HTTP/1.1" 302 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:32] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:32] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:32] "GET /static/styles/main.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:32] "GET /static/styles/images/icon.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:32] "GET /static/styles/images/image3.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:33] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:54] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:46:54] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:17] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:17] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:33] "GET /reviewsearch HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:48] "POST /userreview HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:48] "GET /userreview?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:48] "GET /userreview?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:48] "GET /userreview?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:49] "GET /userreview?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:49] "GET /userreview?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:48:49] "GET /userreview?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:50:15] "POST /userreview HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:50:15] "GET /userreview?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:50:15] "GET /userreview?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:50:15] "GET /userreview?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:50:16] "GET /userreview?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:50:16] "GET /userreview?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:50:16] "GET /userreview?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:11] "POST /userreview HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:11] "GET /userreview?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:11] "GET /userreview?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:11] "GET /userreview?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:11] "GET /userreview?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:11] "GET /userreview?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:11] "GET /userreview?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:59] "POST /userreview HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:53:59] "GET /style.css HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:55:11] "POST /userreview HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2020 18:55:11] "GET /style.css HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\HP\\Desktop\\Web_Dev_2019501007\\project1\\application1.py', reloading
+INFO:werkzeug: * Restarting with stat
