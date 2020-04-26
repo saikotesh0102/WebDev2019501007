@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Details Page</title>
-		<!-- <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static',filename = 'styles/details.css') }}"> -->
+		<!-- <link rel = "stylesheet" type = "text/css" href = "{{url_for('static',filename = 'styles/details.css')}}"> -->
 		<style>
 			select { 
                 appearance: none; 
@@ -199,18 +199,20 @@
 							<textarea name="matter" id="review" class="form-control" rows="10" placeholder="Write your review here" required></textarea>
 						</div>
 						<div>
-							<button class="rating-btn" type="submit">Submit</button>
+							<button class="rating-btn" type="submit">{{Submit}}</button>
 						</div>
 					</form>
 				</div>
 			</div>
-			<div class = "review" style = "display: flex; justify-content: center; font-size:25px; color: ghostwhite; float: top;">
+			{% if rating_one != 0%}
+			<div class = "review" style = "display: flex; justify-content: center; color: ghostwhite; float: top; font-style: italic;">
 				<ul>
-					<li>Your Previous Rating was {{rating_one}}/5.0</li>
-					<li>{{Review}}</li>
+					<li style = "font-size: 40px; font-style: italic;">Your Previous Rating was {{rating_one}}/5</li>
+					<li style = "color: salmon; font-size: 30px;">{{Review}}</li>
 				</ul>
-				<p><br><br><button class="rating-btn" type="submit">Edit</button></p>
+				<!-- <p><br><br><button class="rating-btn" type="submit">Edit</button></p> -->
 			</div>
+			{% endif %}
 		</div>
 	</body>
 </html>

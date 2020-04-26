@@ -95,28 +95,43 @@ def logout():
 def get_book():
     isbn = request.args.get('isbn')
     response = bookreads_api(isbn)
-    email = session["data"]
-    name = User.query.get(email)
-    name = name.name
-    # review = Review.query.filter_by(isbn = isbn).first()
-    review_det = Review.query.filter_by(email = email, isbn = isbn).first()
     if request.method == "GET":
-        if review_det is not None:
-            rating_one = review_det.rating
-            review = review_det.review
-            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rating_one, Review = review, name = name)
-        else:
-            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name)
+        if session.get('data') is not None:
+            email = session["data"]
+            name = User.query.get(email)
+            name = name.name
+            # review = Review.query.filter_by(isbn = isbn).first()
+            review_det = Review.query.filter_by(email = email, isbn = isbn).first()
+            if review_det is not None:
+                rating_one = review_det.rating
+                review = review_det.review
+                return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rating_one, Review = review, name = name, Submit = "Edit")
+            else:
+                return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name, Submit = "Submit")
+        return redirect(url_for("login"))
     elif request.method == "POST":
+        email = session["data"]
+        review_det = Review.query.filter_by(email = email, isbn = isbn).first()
+        name = User.query.get(email)
+        name = name.name
         rate = request.form.get('rating')
         rev = request.form.get('matter')
-        revs = Review(email, isbn, rate,rev)
-        total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-        response["average_rating"] = str(total_rating)
-        response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-        db.session.add(revs)
-        db.session.commit()
-        return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name)
+        if review_det is None:
+            revs = Review(email, isbn, rate,rev)
+            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+            response["average_rating"] = str(total_rating)
+            response["reviews_count"] = str(int(response["reviews_count"]) + 1)
+            db.session.add(revs)
+            db.session.commit()
+            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+        else:
+            review_det.rating = rate
+            review_det.review = rev
+            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+            # response["average_rating"] = str(total_rating)
+            # response["reviews_count"] = str(int(response["reviews_count"]) + 1)
+            db.session.commit()
+            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
 
 def bookreads_api(isbn):
     query = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "GeJUHhlmNf7PYbzeKEnsuw", "isbns": isbn})
