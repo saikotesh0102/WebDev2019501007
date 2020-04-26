@@ -6,72 +6,18 @@
     </head>
 
     <body>
-        <!-- <div class="container"> -->
-          {% if {{rating_one}} == 0 -%}
-              checked1=""
-              checked2=""
-              checked3=""
-              checked4=""
-              checked5=""
-              display="style = 'display:none;'"
-              {% elif {{rating_one}} == 1 -%}
-              checked1=checked
-              checked2=""
-              checked3=""
-              checked4=""
-              checked5=""
-              matter = {{review}}
-              rating = {{rating}}
-              bookName = {{Name}}
-              {% elif {{rating_one}} == 2 -%}
-              checked1=""
-              checked2=checked
-              checked3=""
-              checked4=""
-              checked5=""
-              matter = {{review}}
-              rating = {{rating}};
-              bookName = {{Name}}
-              {% elif {{rating_one}} == 3 -%}
-              checked1=""
-              checked2=""
-              checked3=checked
-              checked4=""
-              checked5=""
-              matter = {{review}}
-              rating = {{rating}}
-              bookName = {{Name}}
-              {% elif {{rating_one}} == 4 -%}
-              checked1=""
-              checked2=""
-              checked3=""
-              checked4=checked
-              checked5=""
-              matter = {{review}}
-              rating = {{rating}}
-              bookName = {{Name}}
-              {% elif {{rating_one}} == 5 -%}
-              checked1=""
-              checked2=""
-              checked3=""
-              checked4=""
-              checked5=checked
-              matter = {{review}}
-              rating = {{rating}}
-              bookName = {{Name}}
-              {%- endif %}
             <div class="feedback">
               <!-- <h1>Please rate the book here</h1> -->
               <form class="rating">
-                <input type="radio" name=5 id="rating-5" {{checked5}}>
+                <input type="radio" name=5 value=5 id="rating-5" >
                 <label for="rating-5"></label>
-                <input type="radio" name=4 id="rating-4" {{checked4}}>
+                <input type="radio" name=4 value=4 id="rating-4" >
                 <label for="rating-4"></label>
-                <input type="radio" name=3 id="rating-3" {{checked3}}>
+                <input type="radio" name=3 value=3 id="rating-3" >
                 <label for="rating-3"></label>
-                <input type="radio" name=2 id="rating-2" {{checked2}}>
+                <input type="radio" name=2 value=2 id="rating-2" >
                 <label for="rating-2"></label>
-                <input type="radio" name=1 id="rating-1" {{checked1}}>
+                <input type="radio" name=1 value=1 id="rating-1" >
                 <label for="rating-1"></label>
                 <div class="emoji-wrapper">
                   <div class="emoji">
@@ -163,16 +109,16 @@
               </form>
             </div>
             <!-- <h1>Review Page</h1> -->
-            <h2 style="font-style: oblique;"font-style: oblique;-style: oblique;">Book Name:{{bookName}}</h2>
+            <h2 style="font-style: oblique;">Book Name:{{bookName}}</h2>
             <h3 style="font-style: oblique;">Overall:   {{rating}}/5.0   </h3>
           <!-- </div> -->
           <!-- <p><strong>Tip:</strong> </p> -->
           <form>
-          <button {{display}} class='a' type="reset" value="Edit" onclick = "style.display='none'">Edit</button>
+          <button class='a' type="reset" value="Edit" onclick = "style.display='none'">Edit</button>
           <!-- <br><br> -->
           <textarea name = 'matter' placeholder="Please review this book here...">{{matter}}</textarea>
           <br><br>
-          <button action = "{{url_for('get_book(isbn)')}}" class='b' type="submit" value="Cancel">Cancel</button>
+          <button class='b' type="submit" value="Cancel">Cancel</button>
           <button method="POST"class='c' type="reset" value="Post">Post</button>
           </form>
     </body>
