@@ -3,7 +3,6 @@
 	<head>
 		<title>Details Page</title>
 		<!-- <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static',filename = 'styles/details.css') }}"> -->
-		<!-- <link rel = "stylesheet" type = "text/css" href = "D:\Study\MSIT\Introdution to Web Programming\project1\static\styles\details.css"> -->
 		<style>
 			select { 
                 appearance: none; 
@@ -18,7 +17,6 @@
                 border-radius:3px;
                 font-style: oblique;
                 font-size: medium;
-
             } 
             .select { 
                 position: relative; 
@@ -28,8 +26,7 @@
                 line-height: 3; 
                 overflow: hidden; 
                 border-radius: .25em; 
-                padding-bottom:10px; 
-                  
+                padding-bottom:10px;     
             } 
             h1 { 
                 color : floralwhite; 
@@ -184,7 +181,6 @@
 						<li>Number of reviewers : {{count}}</li>
 					</ul>
 				</div>
-				{% if rating_one == 0 %}
 				<div class = "button">
 					<h1>Your Review</h1>
 					<form method="POST" class="form-border">
@@ -207,15 +203,13 @@
 						</div>
 					</form>
 				</div>
-				{% elif rating_one != 0 %}
-				<div class = "review" style = "display: flex; justify-content: center; font-size:25px; color: ghostwhite; float: top;">
-					<ul>
-						<li>Your Previous Rating was {{rating_one}}/5.0</li>
-						<li>{{Review}}</li>
-					</ul>
-					<p><br><br><button class="rating-btn" type="submit">Edit</button></p>
-				</div>
-				{% endif %}
+			</div>
+			<div class = "review" style = "display: flex; justify-content: center; font-size:25px; color: ghostwhite; float: top;">
+				<ul>
+					<li>Your Previous Rating was {{rating_one}}/5.0</li>
+					<li>{{Review}}</li>
+				</ul>
+				<p><br><br><button class="rating-btn" type="submit">Edit</button></p>
 			</div>
 		</div>
 	</body>
