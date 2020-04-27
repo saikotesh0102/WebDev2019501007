@@ -25,14 +25,14 @@ logging.debug("database sessions created")
 def index():
     if request.method == "GET":
         if session.get('data') is not None:
-            return render_template("dashboard.html", name = session.get("data"))
+            return redirect(url_for("search"))
         return redirect(url_for("login"))
 
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
         if session.get('data') is not None:
-            return render_template("dashboard.html", name = session.get("data"))
+            return redirect(url_for("search"))
         return render_template("main.html")
 
 #registration page
@@ -81,8 +81,8 @@ def verify():
             session["data"] = email
             logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
-            return render_template("dashboard.html", name = name + " " + fullname)
-            # return render_template("search.html")
+            # return render_template("dashboard.html", name = name + " " + fullname)
+            return redirect(url_for("search"))
     return redirect(url_for("register"))
 
 @app.route("/logout")
@@ -90,6 +90,24 @@ def logout():
     session.clear()
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
+
+@app.route("/search", methods=["GET","POST"])
+def search():
+    if request.method == "GET":
+        return render_template("search.html")
+    elif request.method == "POST": 
+        search_by = request.form.get("search_with").strip()
+        search_text = "%"+request.form.get("search_text").strip()+"%"
+        if search_by == "1":
+            results = Book.query.filter(Book.author.like(search_text)).all()
+        if search_by == "2":
+            results = Book.query.filter(Book.isbn.like(search_text)).all()
+        if search_by == "3":
+            results = Book.query.filter(Book.title.like(search_text)).all()
+        if results != None:
+            return render_template('search.html', results=results)
+        else:
+            return "No such Details Found"
 
 @app.route("/book", methods = ["GET", "POST"])
 def get_book():
