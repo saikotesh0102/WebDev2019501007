@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<Title> Login Page </Title>
+		<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static',filename = 'styles/main.css') }}">
+	</head>
+
+	<body>
+		<div><h2 style = "text-align: center; color : ghostwhite;">{{ name }}</h2></div>
+		<div class = "loginbox">
+			<img src = "static/styles/images/icon.png" alt = "Avatar" class = "image">
+			<h1> Login Here </h1>
+			<form action = "{{ url_for('verify')}}" method = "POST">
+				<p> Enter Your Email </p>
+				<input type = "text" name = "email" placeholder = "Enter Your Email" required>
+				<p> Password </p>
+				<input type = "password" name = "password" placeholder = "Enter Password" required>
+				<input type = "submit" name = "submit" value = "Login">
+				<a href = "#"> Lost Your Password?</a><br>
+				<a href = "{{ url_for('register')}}"> Don't have an Account?</a>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <div><h2 style = "text-align: center;">{{ name }}</h2></div>
+        <form name="myform1" action = "{{ url_for('logout') }}" method = "get">
+            <button id="submit1" type="submit" value="submit" class="btn btn-primary center">Logout</button>
+        </form>
+    </body>
+</html>
