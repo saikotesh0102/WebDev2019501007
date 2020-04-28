@@ -6,7 +6,7 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
-from models import User
+from models import User, Book
 from create import *
 
 # Check for environment variable
@@ -94,3 +94,54 @@ def logout():
     session.clear()
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
+    
+
+@app.route("/search", methods=['GET', 'POST'])
+def search():
+    if request.method == "GET":
+        return render_template("search.html")
+    else:
+        select = request.form.get('comp')
+        result = request.form.get('search')
+        like_format = '%{}%'.format(result)
+        if result == "":
+            return render_template("search.html", msg="query is empty")
+        else:
+            if select == "ISBN":
+                stat = db.session.query(Book).filter(Book.isbn.like(like_format)).order_by(Book.title).all()
+            elif select == "Title":
+                stat = db.session.query(Book).filter(Book.title.like(like_format)).order_by(Book.title).all()
+            elif select == "Author":
+                stat = db.session.query(Book).filter(Book.author.like(like_format)).order_by(Book.title).all()
+            else:
+                stat = db.session.query(Book).filter(Book.year.like(like_format)).order_by(Book.title).all()
+                
+            if len(stat) == 0:
+                return render_template("error.html")
+            else:
+                return render_template("search.html", stat=stat)
+
+
+
+
+
+            
+ 
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+

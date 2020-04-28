@@ -18,3 +18,21 @@ class User(db.Model):
 	
 	def __repr__(self):
 		return '<User %r>' % (self.email)
+
+		
+class Book(db.Model):
+    __tablename__ = "BOOKS"
+    isbn = db.Column(db.String, primary_key = True)
+    title = db.Column(db.String, nullable = False)
+    author = db.Column(db.String, nullable = False)
+    year = db.Column(db.Integer, nullable = False)
+
+    def __init__(self, isbn, title, author, year):
+        self.isbn = isbn
+        self.title = title
+        self.author = author
+        self.year = year
+
+# db.create_all()
+def __repr__(self):
+     return '<Book %r>' % (self.name)
