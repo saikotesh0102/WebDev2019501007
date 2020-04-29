@@ -25,6 +25,42 @@
 				color : ghostwhite;
 			}
 		</style>
+
+		<script>
+			function check(){
+				if(true){
+					document.getElementById("submit");
+				}else{
+					alert("Please check your format of password");
+				}
+			}
+			
+			function validation() {
+				password = document.querySelector("#password").value;
+
+				if (password.length < 6) {
+					alert(" password length has to be more that 6 letters long");
+					return false;
+				}
+				if (!/[a-z]/g.test(password)) {
+					alert("atleast one lower case alphabet needed");
+					return false;
+				}
+				if (!/[A-Z]/g.test(password)) {
+					alert("atleast one upper case alphabet needed");
+					return false;
+				}
+				if (!/[1-9]/g.test(password)) {
+					alert("atleast one digit needed");
+					return false;
+				}
+				if (!/[!@#\$%\^\&*\)\(+=._-]/.test(password)) {
+					alert("atleast one special character needed");
+					return false;
+				}
+				return true;
+			}
+		</script>
 	</head>
 
 	<body>
@@ -35,7 +71,7 @@
 				<div class = "col-lg-6">
 					<div id = "ui">
 						<h1 class = "text-center"> Register Your Account </h1>
-						<form class = "form-group text-center" method = "POST" action = "{{ url_for('register')}}">
+						<form class = "form-group text-center" id = "form" method = "POST" action = "{{ url_for('register')}}">
 							<div class = "row">
 								<div class = "col-lg-6">
 									<label> First Name </label>
@@ -54,7 +90,7 @@
 							<div class = "row">
 								<div class = "col-lg-6">
 									<label> Password </label>
-									<input type = "password" name = "password" class = "form-control" placeholder = "Enter Your Password" required>
+									<input type = "password" name = "password" id = "password" class = "form-control" placeholder = "Enter Your Password" required>
 								</div>
 
 								<div class = "col-lg-6">
@@ -70,7 +106,7 @@
 								<option> Others </option>
 							</select>
 							<br>
-							<input type = "submit" name = "submit" value = "Submit" class = "btn btn-primary btn-block btn-lg">
+							<input type = "submit" name = "submit" id = "submit" onclick = "check()" value = "Submit" class = "btn btn-primary btn-block btn-lg">
 						</form>
 					</div>
 				</div>
