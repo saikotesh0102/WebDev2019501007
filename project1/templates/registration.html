@@ -28,18 +28,10 @@
 
 		<script>
 			function check(){
-				if(true){
-					document.getElementById("submit");
-				}else{
-					alert("Please check your format of password");
-				}
-			}
-			
-			function validation() {
-				password = document.querySelector("#password").value;
+				password = document.getElementById("password").value;
 
 				if (password.length < 6) {
-					alert(" password length has to be more that 6 letters long");
+					alert("password length has to be more that 6 letters long");
 					return false;
 				}
 				if (!/[a-z]/g.test(password)) {
@@ -71,7 +63,7 @@
 				<div class = "col-lg-6">
 					<div id = "ui">
 						<h1 class = "text-center"> Register Your Account </h1>
-						<form class = "form-group text-center" id = "form" method = "POST" action = "{{ url_for('register')}}">
+						<form class = "form-group text-center" id = "form" onsubmit = "return check()" method = "POST" action = "{{ url_for('register')}}">
 							<div class = "row">
 								<div class = "col-lg-6">
 									<label> First Name </label>
@@ -106,7 +98,7 @@
 								<option> Others </option>
 							</select>
 							<br>
-							<input type = "submit" name = "submit" id = "submit" onclick = "check()" value = "Submit" class = "btn btn-primary btn-block btn-lg">
+							<input type = "submit" name = "submit" id = "submit" value = "Submit" class = "btn btn-primary btn-block btn-lg">
 						</form>
 					</div>
 				</div>

@@ -3340,3 +3340,29 @@ DEBUG:root:database sessions created
 DEBUG:root:User Logged out Successfully
 INFO:werkzeug:127.0.0.1 - - [29/Apr/2020 21:51:03] "GET /logout HTTP/1.1" 302 -
 INFO:werkzeug:127.0.0.1 - - [29/Apr/2020 21:51:03] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:12:45] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:12:45] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:12:45] "GET /static/styles/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:12:45] "GET /static/styles/images/icon.png HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:12:46] "GET /static/styles/images/image3.jpg HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:12:46] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:13:43] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:13:44] "GET /static/styles/images/image2.jpg HTTP/1.1" 200 -
+DEBUG:root:user successfully registered in db
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:14:09] "POST /register HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:14:09] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:25:47] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:25:47] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:25:49] "GET /register HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:27:45] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:27:45] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:47] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:48] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:48] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:50] "GET /register HTTP/1.1" 200 -
