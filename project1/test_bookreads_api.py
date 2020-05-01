@@ -18,7 +18,7 @@ class TestCase(unittest.TestCase):
         db.session.remove()
         db.drop_all()
 
-    def test_make_unique_nickname(self):
+    def test_bookreads_api(self):
         book = Book(isbn = "123456", name = "2States", author = "Chetan Bhagat", publicationyear = "2015")
         db.session.add(book)
         db.session.commit()
