@@ -109,15 +109,14 @@ def search():
         else:
             return "No such Details Found"
 
-@app.route("/book", methods = ["GET", "POST"])
+@app.route("/book", methods = ["GET"])
 def get_book():
     isbn = request.args.get('isbn')
     response = bookreads_api(isbn)
     if request.method == "GET":
         if session.get('data') is not None:
             email = session["data"]
-            name = User.query.get(email)
-            name = name.name
+            name = User.query.get(email).name
             # review = Review.query.filter_by(isbn = isbn).first()
             review_det = Review.query.filter_by(email = email, isbn = isbn).first()
             if review_det is not None:
@@ -129,9 +128,9 @@ def get_book():
         return redirect(url_for("login"))
     elif request.method == "POST":
         email = session["data"]
+        isbn = request.args.get('isbn')
         review_det = Review.query.filter_by(email = email, isbn = isbn).first()
-        name = User.query.get(email)
-        name = name.name
+        name = User.query.get(email).name
         rate = request.form.get('rating')
         rev = request.form.get('matter')
         if review_det is None:

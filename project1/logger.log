@@ -3366,3 +3366,31 @@ INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:47] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:48] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:48] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 10:28:50] "GET /register HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:50:31] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:50:31] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:50:47] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:50:48] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:50:48] "GET /static/styles/images/image7.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:51:06] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:51:15] "GET /book?isbn=1554682746 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:51:15] "GET /static/styles/images/image6.jpg HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0446531383 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:51:29] "GET /book?isbn=0446531383 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0446531383 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:52:20] "POST /book?isbn=0446531383 HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:53:09] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Apr/2020 14:53:09] "GET /login HTTP/1.1" 200 -
