@@ -159,9 +159,9 @@
 			document.addEventListener('DOMContentLoaded', () => {
 				document.getElementById('form').onsubmit = () => {
 					const request = new XMLHttpRequest();
-					const review = document.getElementById('review').value;
+					const review = JSON.stringify(document.getElementById('review').value);
 					const rating = document.getElementById('rating').value;
-					request.open('POST', '/book');
+					request.open('POST', '/api/review?isbn={{ISBN}}');
 					
 					request.onload = () => {
 

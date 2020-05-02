@@ -15,10 +15,6 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 logging.basicConfig(filename = 'logger.log', level = logging.DEBUG)
-
-# Set up database
-# engine = create_engine(os.getenv("DATABASE_URL"))
-# db = scoped_session(sessionmaker(bind=engine))
 logging.debug("database sessions created")
 
 @app.route("/", methods = ["GET", "POST"])
@@ -109,46 +105,45 @@ def search():
         else:
             return "No such Details Found"
 
-# @app.route("/book", methods = ["GET","POST"])
-# def get_book():
-#     isbn = request.args.get('isbn')
-#     response = bookreads_api(isbn)
-#     if request.method == "GET":
-#         if session.get('data') is not None:
-#             email = session["data"]
-#             name = User.query.get(email).name
-#             # review = Review.query.filter_by(isbn = isbn).first()
-#             review_det = Review.query.filter_by(email = email, isbn = isbn).first()
-#             if review_det is not None:
-#                 rating_one = review_det.rating
-#                 review = review_det.review
-#                 return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rating_one, Review = review, name = name, Submit = "Edit")
-#             else:
-#                 return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name, Submit = "Submit")
-#         return redirect(url_for("login"))
-#     elif request.method == "POST":
-#         email = session["data"]
-#         isbn = request.args.get('isbn')
-#         review_det = Review.query.filter_by(email = email, isbn = isbn).first()
-#         name = User.query.get(email).name
-#         rate = request.form.get('rating')
-#         rev = request.form.get('matter')
-#         if review_det is None:
-#             revs = Review(email, isbn, rate,rev)
-#             total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-#             response["average_rating"] = str(total_rating)
-#             response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-#             db.session.add(revs)
-#             db.session.commit()
-#             return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
-#         else:
-#             review_det.rating = rate
-#             review_det.review = rev
-#             total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-#             # response["average_rating"] = str(total_rating)
-#             # response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-#             db.session.commit()
-#             return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+@app.route("/book", methods = ["GET","POST"])
+def get_book():
+    isbn = request.args.get('isbn')
+    response = bookreads_api(isbn)
+    if request.method == "GET":
+        if session.get('data') is not None:
+            email = session["data"]
+            name = User.query.get(email).name
+            review_det = Review.query.filter_by(email = email, isbn = isbn).first()
+            if review_det is not None:
+                rating_one = review_det.rating
+                review = review_det.review
+                return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rating_one, Review = review, name = name, Submit = "Edit")
+            else:
+                return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name, Submit = "Submit")
+        return redirect(url_for("login"))
+    # elif request.method == "POST":
+    #     email = session["data"]
+    #     isbn = request.args.get('isbn')
+    #     review_det = Review.query.filter_by(email = email, isbn = isbn).first()
+    #     name = User.query.get(email).name
+    #     rate = request.form.get('rating')
+    #     rev = request.form.get('matter')
+    #     if review_det is None:
+    #         revs = Review(email, isbn, rate,rev)
+    #         total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+    #         response["average_rating"] = str(total_rating)
+    #         response["reviews_count"] = str(int(response["reviews_count"]) + 1)
+    #         db.session.add(revs)
+    #         db.session.commit()
+    #         # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+    #         return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
+    #     else:
+    #         review_det.rating = rate
+    #         review_det.review = rev
+    #         total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+    #         db.session.commit()
+    #         # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+    #         return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
 
 def bookreads_api(isbn):
     isbn = request.args.get("isbn")
@@ -164,45 +159,28 @@ def bookreads_api(isbn):
     response['img'] = "http://covers.openlibrary.org/b/isbn/" + isbn + ".jpg"
     return response
 
-@app.route("/book", methods = ["GET","POST"])
-def get_book():
+@app.route("/api/review", methods = ["POST"])
+def review():
+    email = session["data"]
     isbn = request.args.get('isbn')
     response = bookreads_api(isbn)
-    if request.method == "GET":
-        if session.get('data') is not None:
-            email = session["data"]
-            name = User.query.get(email).name
-            # review = Review.query.filter_by(isbn = isbn).first()
-            review_det = Review.query.filter_by(email = email, isbn = isbn).first()
-            if review_det is not None:
-                rating_one = review_det.rating
-                review = review_det.review
-                return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rating_one, Review = review, name = name, Submit = "Edit")
-            else:
-                return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name, Submit = "Submit")
-        return redirect(url_for("login"))
-    elif request.method == "POST":
-        email = session["data"]
-        isbn = request.args.get('isbn')
-        review_det = Review.query.filter_by(email = email, isbn = isbn).first()
-        name = User.query.get(email).name
-        rate = request.form.get('rating')
-        rev = request.form.get('matter')
-        if review_det is None:
-            revs = Review(email, isbn, rate,rev)
-            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-            response["average_rating"] = str(total_rating)
-            response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-            db.session.add(revs)
-            db.session.commit()
-            # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
-            return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
-        else:
-            review_det.rating = rate
-            review_det.review = rev
-            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-            # response["average_rating"] = str(total_rating)
-            # response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-            db.session.commit()
-            # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
-            return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
+    review_det = Review.query.filter_by(email = email, isbn = isbn).first()
+    name = User.query.get(email).name
+    rate = request.form.get('rating')
+    rev = request.form.get('matter')
+    if review_det is None:
+        revs = Review(email, isbn, rate,rev)
+        total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+        response["average_rating"] = str(total_rating)
+        response["reviews_count"] = str(int(response["reviews_count"]) + 1)
+        db.session.add(revs)
+        db.session.commit()
+        # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+        return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
+    else:
+        review_det.rating = rate
+        review_det.review = rev
+        total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+        db.session.commit()
+        # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+        return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })

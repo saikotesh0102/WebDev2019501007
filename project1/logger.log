@@ -3794,3 +3794,275 @@ INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:19:30] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:19:31] "GET /static/styles/main.css HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:19:31] "GET /static/styles/images/icon.png HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:19:31] "GET /static/styles/images/image3.jpg HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:29:38] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:29:38] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:29:44] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:29:44] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:29:56] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0804177996 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:30:06] "GET /book?isbn=0804177996 HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:30:40] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 19:30:40] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:10:48] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:10:48] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:10:51] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:10:51] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:11:01] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:11:07] "GET /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw HTTP/1.1" 422 None
+DEBUG:root:Goodreads call success
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:14:50] "POST /book HTTP/1.1" 500 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:21:27] "GET /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:50:43] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:50:43] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:50:56] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:51:01] "GET /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:51:19] "POST /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:51:33] "POST /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:51:36] "POST /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:52:37] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:52:37] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:54:07] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:54:07] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:54:16] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:54:21] "GET /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:55:28] "POST /book?isbn=1554682746 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=1554682746 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:55:46] "GET /book?isbn=1554682746 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:56:44] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:56:48] "GET /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:57:36] "POST /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 20:58:19] "GET /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:02:41] "GET /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:03:26] "POST /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:03:42] "GET /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:07:30] "GET /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:07:54] "POST /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553803700 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:08:15] "GET /book?isbn=0553803700 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:08:26] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:08:56] "POST /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:10:28] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:11:09] "POST /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:11:16] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:16:56] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:17:48] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:18:01] "POST /api/review?isbn=0553299492 HTTP/1.1" 405 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:18:46] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:19:05] "POST /api/review?isbn=0553299492 HTTP/1.1" 405 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:19:47] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:20:04] "POST /api/review?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:24:48] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:25:07] "POST /api/review?isbn=0553299492 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:25:56] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:27:41] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:27:52] "POST /api/review?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:27:59] "GET /book?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0553299492 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:28:26] "POST /api/review?isbn=0553299492 HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:40:48] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:40:48] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:48:49] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:48:49] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:48:53] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:48:53] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:49:07] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0804177996 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:49:16] "GET /book?isbn=0804177996 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0804177996 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:50:07] "POST /api/review?isbn=0804177996 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0804177996 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:50:37] "GET /book?isbn=0804177996 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0804177996 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:51:56] "POST /api/review?isbn=0804177996 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0804177996 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [01/May/2020 21:52:04] "GET /book?isbn=0804177996 HTTP/1.1" 200 -
