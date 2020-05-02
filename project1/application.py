@@ -1,6 +1,5 @@
 import os, hashlib, logging, requests
 from flask import Flask, session, render_template, request, redirect, url_for, json, jsonify
-from flask_cors import cross_origin
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -95,6 +94,8 @@ def search():
     elif request.method == "POST": 
         search_by = request.form.get("search_with").strip()
         search_text = "%"+request.form.get("search_text").strip()+"%"
+        if search_by == "Select":
+            return render_template("search.html")
         if search_by == "1":
             results = Book.query.filter(Book.author.like(search_text)).all()
         if search_by == "2":
@@ -122,29 +123,6 @@ def get_book():
             else:
                 return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name, Submit = "Submit")
         return redirect(url_for("login"))
-    # elif request.method == "POST":
-    #     email = session["data"]
-    #     isbn = request.args.get('isbn')
-    #     review_det = Review.query.filter_by(email = email, isbn = isbn).first()
-    #     name = User.query.get(email).name
-    #     rate = request.form.get('rating')
-    #     rev = request.form.get('matter')
-    #     if review_det is None:
-    #         revs = Review(email, isbn, rate,rev)
-    #         total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-    #         response["average_rating"] = str(total_rating)
-    #         response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-    #         db.session.add(revs)
-    #         db.session.commit()
-    #         # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
-    #         return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
-    #     else:
-    #         review_det.rating = rate
-    #         review_det.review = rev
-    #         total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-    #         db.session.commit()
-    #         # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
-    #         return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
 
 def bookreads_api(isbn):
     isbn = request.args.get("isbn")
@@ -161,7 +139,6 @@ def bookreads_api(isbn):
     return response
 
 @app.route("/api/review", methods = ["POST"])
-# @cross_origin()
 def review():
     if request.method == "POST":
         email = session["data"]
@@ -170,7 +147,6 @@ def review():
         review_det = Review.query.filter_by(email = email, isbn = isbn).first()
         name = User.query.get(email).name
         content = request.get_json(force = True)
-        print(content)
         rate = content['rating'].strip()
         rev = content['review'].strip()
         if review_det is None:

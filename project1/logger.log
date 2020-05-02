@@ -4488,3 +4488,95 @@ INFO:werkzeug:127.0.0.1 - - [02/May/2020 17:06:22] "POST /api/review?isbn=055380
 DEBUG:root:User Logged out Successfully
 INFO:werkzeug:127.0.0.1 - - [02/May/2020 17:06:36] "GET /logout HTTP/1.1" 302 -
 INFO:werkzeug:127.0.0.1 - - [02/May/2020 17:06:36] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:00:10] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:00:10] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:00:14] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:00:14] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:00:30] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=014311638X HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:00:37] "GET /book?isbn=014311638X HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=014311638X HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:00:51] "POST /api/review?isbn=014311638X HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:01:16] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:01:16] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:15:26] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:15:26] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:15:29] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:15:30] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:15:40] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:15:53] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:16:02] "POST /search HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0743290119 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:16:09] "GET /book?isbn=0743290119 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0743290119 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:16:50] "GET /book?isbn=0743290119 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0743290119 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:17:26] "POST /api/review?isbn=0743290119 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.goodreads.com:443
+DEBUG:urllib3.connectionpool:https://www.goodreads.com:443 "GET /book/review_counts.json?key=GeJUHhlmNf7PYbzeKEnsuw&isbns=0743290119 HTTP/1.1" 200 None
+DEBUG:root:Goodreads call success
+DEBUG:root:DB query executed successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:17:50] "GET /book?isbn=0743290119 HTTP/1.1" 200 -
+DEBUG:root:User Logged out Successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:17:56] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:17:56] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:28:56] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:28:56] "GET /login HTTP/1.1" 200 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:00] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:00] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:13] "POST /search HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:13] "GET /search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:13] "GET /search?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:13] "GET /search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:13] "GET /search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:13] "GET /search?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:29:13] "GET /search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:22] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:26] "POST /search HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:26] "GET /search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:26] "GET /search?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:26] "GET /search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:27] "GET /search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:27] "GET /search?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:30:27] "GET /search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:31:04] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/May/2020 19:31:10] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
