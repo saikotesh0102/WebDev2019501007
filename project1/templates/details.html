@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Details Page</title>
+		<!-- <link rel = "stylesheet" type = "text/css" href = "{{url_for('static',filename = 'styles/details.css')}}"> -->
 		<style>
 			select { 
                 appearance: none; 
@@ -152,12 +153,48 @@
 				padding : 5px 20px;
 				border : 1px solid transparent;
 			}
-		</style>			
+		</style>
+		
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				document.getElementById('form').onsubmit = () => {
+					const request = new XMLHttpRequest();
+					const review = document.getElementById('review').value;
+					const rating = document.getElementById('rating').value;
+					request.open('POST', '/api/review?isbn={{ISBN}}');
+					
+					request.onload = () => {
+						const data = JSON.parse(request.responseText);
+
+						if(data.success){
+							document.getElementById('username').innerHTML = `${data.name}`;
+							document.getElementById('image').innerHTML = `${data.image}`;
+							document.getElementById('Name').innerHTML = `Book Name : ${data.Name}`;
+							document.getElementById('Author').innerHTML = `Author : ${data.Author}`;
+							document.getElementById('ISBN').innerHTML = `ISBN : ${data.ISBN}`;
+							document.getElementById('Year').innerHTML = `Year of Publication : ${data.Year}`;
+							document.getElementById('overall').innerHTML = `Average Rating : ${data.rating}`;
+							document.getElementById('count').innerHTML = `Number of Reviewers : ${data.count}`;
+							document.getElementById('button').innerHTML = `${data.Submit}`;
+							document.getElementById('number').innerHTML = `Your Rating is ${data.rating_one}/5`;
+							document.getElementById('matter').innerHTML = `${data.Review}`;
+						}else{
+							document.getElementById('list').innerHTML = '';
+						}
+					}
+					// const data = new FormData();
+					// data.append('review', review);
+					// data.append('rating', rating)
+					request.send(JSON.stringify({"review" : review, "rating" : rating}));
+					return false;
+				}
+			});
+		</script>
 	</head>
     <body>
 		<div>
 			<div class = "name">
-				<h1>{{name}}</h1>
+				<h1 id = "username">{{name}}</h1>
 				<div class = "list">
 					<ul>
 						<li><a href = "#"> Home </a></li>
@@ -167,22 +204,22 @@
 			</div>
 
 			<div class = "Book">
-				<img src = {{image}} alt = "Image of a Book">
+				<img id = "image" src = {{image}} alt = "Image of a Book">
 				<div class = "details">
 					<br>
 					<br>
 					<ul>
-						<li>Book Name : {{Name}}</li>
-						<li>Author : {{Author}}</li>
-						<li>ISBN : {{ISBN}}</li>
-						<li>Year of Publication : {{Year}}</li>
-						<li>Average Rating : {{rating}}</li>
-						<li>Number of reviewers : {{count}}</li>
+						<li id = "Name">Book Name : {{Name}}</li>
+						<li id = "Author">Author : {{Author}}</li>
+						<li id = "ISBN">ISBN : {{ISBN}}</li>
+						<li id = "Year">Year of Publication : {{Year}}</li>
+						<li id = "overall">Average Rating : {{rating}}</li>
+						<li id = "count">Number of Reviewers : {{count}}</li>
 					</ul>
 				</div>
 				<div class = "button">
 					<h1>Your Review</h1>
-					<form method="POST" class="form-border">
+					<form  id = "form" method = "POST" class = "form-border">
 						<div class = "select">
 							<label for="rating" style = "font-weight: bold; color: ghostwhite;">Rate this book</label>
 							<select id="rating" name="rating" class="form-control" required>
@@ -198,19 +235,18 @@
 							<textarea name="matter" id="review" class="form-control" rows="10" placeholder="Write your review here" required></textarea>
 						</div>
 						<div>
-							<button class="rating-btn" type="submit">{{Submit}}</button>
+							<button id = "button" class="rating-btn" type="submit">{{Submit}}</button>
 						</div>
 					</form>
 				</div>
 			</div>
-			{% if rating_one != 0%}
 			<div class = "review" style = "display: flex; justify-content: center; color: ghostwhite; float: top; font-style: italic;">
-				<ul>
-					<li style = "font-size: 40px; font-style: italic;">Your Previous Rating was {{rating_one}}/5</li>
-					<li style = "color: salmon; font-size: 30px;">{{Review}}</li>
+				<ul id = "list">
+					<li id = "number" style = "font-size: 40px; font-style: italic;">Your Rating is {{rating_one}}/5</li>
+					<li id = "matter" style = "color: salmon; font-size: 30px;">{{Review}}</li>
 				</ul>
+				<!-- <p><br><br><button class="rating-btn" type="submit">Edit</button></p> -->
 			</div>
-			{% endif %}
 		</div>
 	</body>
 </html>

@@ -1,5 +1,6 @@
 import os, hashlib, logging, requests
 from flask import Flask, session, render_template, request, redirect, url_for, json, jsonify
+from flask_cors import cross_origin
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -15,24 +16,20 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 logging.basicConfig(filename = 'logger.log', level = logging.DEBUG)
-
-# Set up database
-# engine = create_engine(os.getenv("DATABASE_URL"))
-# db = scoped_session(sessionmaker(bind=engine))
 logging.debug("database sessions created")
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
     if request.method == "GET":
         if session.get('data') is not None:
-            return render_template("dashboard.html", name = session.get("data"))
+            return redirect(url_for("search"))
         return redirect(url_for("login"))
 
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
         if session.get('data') is not None:
-            return render_template("dashboard.html", name = session.get("data"))
+            return redirect(url_for("search"))
         return render_template("main.html")
 
 #registration page
@@ -81,8 +78,8 @@ def verify():
             session["data"] = email
             logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
-            return render_template("dashboard.html", name = name + " " + fullname)
-            # return render_template("search.html")
+            # return render_template("dashboard.html", name = name + " " + fullname)
+            return redirect(url_for("search"))
     return redirect(url_for("register"))
 
 @app.route("/logout")
@@ -91,16 +88,32 @@ def logout():
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
 
-@app.route("/book", methods = ["GET", "POST"])
+@app.route("/search", methods=["GET","POST"])
+def search():
+    if request.method == "GET":
+        return render_template("search.html")
+    elif request.method == "POST": 
+        search_by = request.form.get("search_with").strip()
+        search_text = "%"+request.form.get("search_text").strip()+"%"
+        if search_by == "1":
+            results = Book.query.filter(Book.author.like(search_text)).all()
+        if search_by == "2":
+            results = Book.query.filter(Book.isbn.like(search_text)).all()
+        if search_by == "3":
+            results = Book.query.filter(Book.title.like(search_text)).all()
+        if results != None:
+            return render_template('search.html', results = results)
+        else:
+            return "No such Details Found"
+
+@app.route("/book", methods = ["GET","POST"])
 def get_book():
     isbn = request.args.get('isbn')
     response = bookreads_api(isbn)
     if request.method == "GET":
         if session.get('data') is not None:
             email = session["data"]
-            name = User.query.get(email)
-            name = name.name
-            # review = Review.query.filter_by(isbn = isbn).first()
+            name = User.query.get(email).name
             review_det = Review.query.filter_by(email = email, isbn = isbn).first()
             if review_det is not None:
                 rating_one = review_det.rating
@@ -109,31 +122,9 @@ def get_book():
             else:
                 return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name, Submit = "Submit")
         return redirect(url_for("login"))
-    elif request.method == "POST":
-        email = session["data"]
-        review_det = Review.query.filter_by(email = email, isbn = isbn).first()
-        name = User.query.get(email)
-        name = name.name
-        rate = request.form.get('rating')
-        rev = request.form.get('matter')
-        if review_det is None:
-            revs = Review(email, isbn, rate,rev)
-            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-            response["average_rating"] = str(total_rating)
-            response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-            db.session.add(revs)
-            db.session.commit()
-            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
-        else:
-            review_det.rating = rate
-            review_det.review = rev
-            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
-            # response["average_rating"] = str(total_rating)
-            # response["reviews_count"] = str(int(response["reviews_count"]) + 1)
-            db.session.commit()
-            return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
-
+    
 def bookreads_api(isbn):
+    isbn = request.args.get("isbn")
     query = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "GeJUHhlmNf7PYbzeKEnsuw", "isbns": isbn})
     logging.debug("Goodreads call success")
     response = query.json()
@@ -145,3 +136,33 @@ def bookreads_api(isbn):
     response['year'] = book_info.publicationyear
     response['img'] = "http://covers.openlibrary.org/b/isbn/" + isbn + ".jpg"
     return response
+
+@app.route("/api/review", methods = ["POST"])
+# @cross_origin()
+def review():
+    if request.method == "POST":
+        email = session["data"]
+        isbn = request.args.get('isbn')
+        response = bookreads_api(isbn)
+        review_det = Review.query.filter_by(email = email, isbn = isbn).first()
+        name = User.query.get(email).name
+        content = request.get_json(force = True)
+        print(content)
+        rate = content['rating'].strip()
+        rev = content['review'].strip()
+        if review_det is None:
+            revs = Review(email, isbn, rate,rev)
+            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+            response["average_rating"] = str(total_rating)
+            response["reviews_count"] = str(int(response["reviews_count"]) + 1)
+            db.session.add(revs)
+            db.session.commit()
+            # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+            return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
+        else:
+            review_det.rating = rate
+            review_det.review = rev
+            total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
+            db.session.commit()
+            # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
+            return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
