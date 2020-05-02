@@ -159,13 +159,12 @@
 			document.addEventListener('DOMContentLoaded', () => {
 				document.getElementById('form').onsubmit = () => {
 					const request = new XMLHttpRequest();
-					const review = JSON.stringify(document.getElementById('review').value);
+					const review = document.getElementById('review').value;
 					const rating = document.getElementById('rating').value;
 					request.open('POST', '/api/review?isbn={{ISBN}}');
 					
 					request.onload = () => {
-
-						const data = json.parse(request.responseText);
+						const data = JSON.parse(request.responseText);
 
 						if(data.success){
 							document.getElementById('username').innerHTML = `${data.name}`;
@@ -183,10 +182,10 @@
 							document.getElementById('list').innerHTML = '';
 						}
 					}
-					const data = new FormData();
-					data.append('review', review);
-					data.append('rating', rating)
-					request.send(data);
+					// const data = new FormData();
+					// data.append('review', review);
+					// data.append('rating', rating)
+					request.send(JSON.stringify({"review" : review, "rating" : rating}));
 					return false;
 				}
 			});
@@ -220,7 +219,7 @@
 				</div>
 				<div class = "button">
 					<h1>Your Review</h1>
-					<form  id = "form" method = "POST" class = "form-border" >
+					<form  id = "form" method = "POST" class = "form-border">
 						<div class = "select">
 							<label for="rating" style = "font-weight: bold; color: ghostwhite;">Rate this book</label>
 							<select id="rating" name="rating" class="form-control" required>
@@ -241,7 +240,6 @@
 					</form>
 				</div>
 			</div>
-			{% if rating_one != 0%}
 			<div class = "review" style = "display: flex; justify-content: center; color: ghostwhite; float: top; font-style: italic;">
 				<ul id = "list">
 					<li id = "number" style = "font-size: 40px; font-style: italic;">Your Rating is {{rating_one}}/5</li>
@@ -249,7 +247,6 @@
 				</ul>
 				<!-- <p><br><br><button class="rating-btn" type="submit">Edit</button></p> -->
 			</div>
-			{% endif %}
 		</div>
 	</body>
 </html>
