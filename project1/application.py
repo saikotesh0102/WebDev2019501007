@@ -1,8 +1,7 @@
 import os, hashlib, logging, requests
 from flask import Flask, session, render_template, request, redirect, url_for, json, jsonify
-from flask_cors import cross_origin
 from flask_session import Session
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, or_
 from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
 from models import *
@@ -88,25 +87,33 @@ def logout():
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
 
-@app.route("/search", methods=["GET","POST"])
+@app.route("/search", methods = ["GET"])
 def search():
     if request.method == "GET":
         return render_template("search.html")
-    elif request.method == "POST": 
-        search_by = request.form.get("search_with").strip()
-        search_text = "%"+request.form.get("search_text").strip()+"%"
+
+@app.route("/api/search", methods = ["POST"])
+def api_search():
+    if request.method == "POST":
+        content = request.get_json(force = True)
+        search_by = content["select"].strip()
+        search_text = "%" + content["search_text"].strip() + "%"
         if search_by == "1":
             results = Book.query.filter(Book.author.like(search_text)).all()
         if search_by == "2":
             results = Book.query.filter(Book.isbn.like(search_text)).all()
         if search_by == "3":
             results = Book.query.filter(Book.title.like(search_text)).all()
+        if search_by == "select":
+            results = Book.query.filter(or_(Book.author.like(search_text), Book.isbn.like(search_text), Book.title.like(search_text)))
         if results != None:
-            return render_template('search.html', results = results)
-        else:
-            return "No such Details Found"
+            search_results = []
+            for result in results:
+                details = {"ISBN" : result.isbn, "title" : result.title}
+                search_results.append(details)
+            return jsonify({"success" : True, "results" : search_results})
 
-@app.route("/book", methods = ["GET","POST"])
+@app.route("/book", methods = ["GET"])
 def get_book():
     isbn = request.args.get('isbn')
     response = bookreads_api(isbn)
@@ -122,7 +129,7 @@ def get_book():
             else:
                 return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Review", rating_one = 0, name = name, Submit = "Submit")
         return redirect(url_for("login"))
-    
+
 def bookreads_api(isbn):
     isbn = request.args.get("isbn")
     query = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "GeJUHhlmNf7PYbzeKEnsuw", "isbns": isbn})
@@ -138,7 +145,6 @@ def bookreads_api(isbn):
     return response
 
 @app.route("/api/review", methods = ["POST"])
-# @cross_origin()
 def review():
     if request.method == "POST":
         email = session["data"]
@@ -147,7 +153,6 @@ def review():
         review_det = Review.query.filter_by(email = email, isbn = isbn).first()
         name = User.query.get(email).name
         content = request.get_json(force = True)
-        print(content)
         rate = content['rating'].strip()
         rev = content['review'].strip()
         if review_det is None:
