@@ -1,7 +1,7 @@
 import os
 import hashlib
 import logging
-from flask import Flask, session, render_template, request, redirect, flash, url_for
+from flask import Flask, session, render_template, request, redirect, flash, url_for, jsonify
 from flask_session import Session
 from sqlalchemy import create_engine, or_
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -118,14 +118,76 @@ def user_review():
 @app.route("/reviewsearch", methods = ["GET"])
 def review_search():
     if request.method == "GET":
-        if session.get("data"):
-            return render_template("reviewsearch.html")
+        if session.get("user_email"):
+            email = session.get("user_email")
+            return render_template("userreview.html", email=email)
         else :
             flash("Please Login First", "info")
             return redirect("/login")
 
-    else:
-        return "Post method is not allowed"
+@app.route("/api/userreview", methods=["POST"])
+def userReviewAPI() :
+
+    try :
+
+        if not request.is_json :
+            return jsonify({"error" : "not a json request"}), 400
+
+        reqData = request.get_json()
+        #print(reqData)
+        if "email" not in reqData :
+            return jsonify({"error" : "missing email key"}), 400
+
+        if "search" not in reqData :
+            return jsonify({"error" : "missing search key"}), 400
+
+        email = reqData.get("email")
+
+        registered = User.query.get(email)
+
+        if registered is None :
+            return jsonify({"error": "Not a registered user"})
+        #print(email)
+
+        query = reqData.get("search")
+        #print(query)
+
+        if len(query) == 0:
+            #print("rtyuicvbn")
+            return jsonify({"error" : "no results found"}), 404
+        #print("hello")
+        users = User.query.filter(or_(User.email.ilike(query), User.name.ilike(query))).all()
+        #print(users)
+        rev = []
+        
+        for user in users:
+            rev = rev + Review.query.filter_by(email=user.email).group_by(Review.email,Review.isbn).order_by(Review.time_stamp.desc()).all()
+        #print(rev)
+        try:
+
+            rev[0].isbn
+            
+            reviews = []
+
+            for r in rev :
+
+                temp = {}
+                temp["isbn"] = r.isbn
+                temp["email"] = r.email
+                temp["rating"] = r.rating
+                temp["comments"] = r.review
+                temp["timestamp"] = r.time_stamp
+                reviews.append(temp)
+                #print(reviews)
+            return jsonify({"reviews" : reviews}), 200
+        except Exception:
+            #print(exc)
+            return jsonify({"error" : "No reviews so far"}), 404
+    except Exception:
+        #print(exc)
+
+        return jsonify({"error" : "Server Error"}), 500
+
 
 if __name__ == "__main__" :
     app.run(debug=True)
