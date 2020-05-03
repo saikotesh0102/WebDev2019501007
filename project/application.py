@@ -1,6 +1,7 @@
 import os
 import hashlib
 import logging
+import requests
 from flask import Flask, session, render_template, request, redirect, url_for
 from flask_session import Session
 from sqlalchemy import create_engine
@@ -99,29 +100,61 @@ def logout():
 @app.route("/search", methods=['GET', 'POST'])
 def search():
     if request.method == "GET":
-        return render_template("search.html")
+        postsearch = False
+        if 'name' not in session:
+            return render_template("search.html")
     else:
+        postsearch = True
         select = request.form.get('comp')
         result = request.form.get('search')
         like_format = '%{}%'.format(result)
         if result == "":
-            return render_template("search.html", msg="query is empty")
+            return render_template("search.html", msg="query is not empty")
         else:
             if select == "ISBN":
-                stat = db.session.query(Book).filter(Book.isbn.like(like_format)).order_by(Book.title).all()
+                data = db.session.query(Book).filter(Book.isbn.like(like_format)).order_by(Book.title).all()
             elif select == "Title":
-                stat = db.session.query(Book).filter(Book.title.like(like_format)).order_by(Book.title).all()
+                data = db.session.query(Book).filter(Book.title.like(like_format)).order_by(Book.title).all()
             elif select == "Author":
-                stat = db.session.query(Book).filter(Book.author.like(like_format)).order_by(Book.title).all()
+                data = db.session.query(Book).filter(Book.author.like(like_format)).order_by(Book.title).all()
             else:
-                stat = db.session.query(Book).filter(Book.year.like(like_format)).order_by(Book.title).all()
+                data = db.session.query(Book).filter(Book.year.like(like_format)).order_by(Book.title).all()
                 
-            if len(stat) == 0:
-                return render_template("error.html")
+            if len(data) == 0:
+                return render_template("search.html", message="Provide available data")
+            
             else:
-                return render_template("search.html", stat=stat)
+                return render_template("search.html", data=data)
 
 
+
+# @app.route("/book/<string:isbn>", methods = ["GET"])
+# def get_book(isbn):
+#     response = bookreads_api(isbn)
+#     return render_template("bookpage.html", 
+#                 name=response["name"], 
+#                 author=response["author"], 
+#                 ISBN = response["isbn"], 
+#                 year=response["year"], 
+#                 rating=float(response["average_rating"]), 
+#                 count=float(response["reviews_count"]))
+                
+# def bookreads_api(isbn):
+#     logging.debug(session.get('data'))
+#     # result = db.execute("SELECT title, author, year FROM books WHERE isbn = :isbn", {"isbn": isbn}).fetchall()
+#     res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "", "isbns": isbn})
+#     print(res.text)
+#     response = res.json()
+#     book_details = res.json()
+#     print(book_details)
+#     key = ['title', 'author', 'year', 'isbn',
+#             'review_count', 'average_score', 'rating_count']
+#     values = [result[0][0], result[0][1], result[0][2], isbn, book_details['books']
+#             [0]['reviews_count'], book_details['books'][0]['average_rating'], book_details['books'][0]['review_count']]
+#     response = dict(zip(key, values))
+#     logging.error(response)
+#     return response
+    
 
 
 

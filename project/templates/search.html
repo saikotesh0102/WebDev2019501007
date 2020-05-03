@@ -1,101 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% extends "layout.html" %}
+
+{% block title %}
+    Goodreads - Search Results
+{% endblock %}
+{% block javascript %}
+    <script type=text/javascript src="{{ url_for('static', filename='js/search.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <title>bookview</title>
-  </head>
-  <style>
-      body {
-        background: url("download.jpg") no-repeat center center fixed;
-      }
-      .search form img{
-                    margin:2px 0 0 2px
-                }
-      .searchBox__input{
-          border:1px solid #D8D8D8;
-          border-radius:3px;
-          font-family:"Lato", "Helvetica Neue", "Helvetica", sans-serif;
-          font-size:14px;
-          padding:8px 26px 8px 8px;
-          width:100%
-      }
-      .searchBox--large{
-          border-radius:3px;
-          padding:10px;
-          margin-bottom:12px
-      }
-      .searchBox--large__input {
-          float:left;
-          font-size:14px;
-          -moz-box-sizing:border-box;
-          -webkit-box-sizing:border-box;
-          box-sizing:border-box;
-          padding:5px;
-          height:31px;
-          width:80%
-      }
-      .searchBox--large__button { 
-          border-radius:3px;
-          border:1px solid #D6D0C4;
-          font-family:"Lato", "Helvetica Neue", "Helvetica", sans-serif;
-          font-size:14px;
-          -moz-appearance:none;
-          -o-appearance:none;
-          -webkit-appearance:none;
-          appearance:none;
-          cursor:pointer;
-          display:inline-block;
-          text-decoration:none;
-          color:#333333;
-          background-color:#F4F1EA;
-          line-height:1;
-          padding:8px 12px;
-          margin-left:5px
-      }
-      .searchBox--large__button:hover{
-          color:#333333;
-          background-color:#ede6d6;
-          text-decoration:none
-      }
-      .searchBox--large__button:active{
-          background-color:#D6D0C4}
-      .searchBox--large__button:disabled {
-          background-color:#F3F3F3;
-          color:#cccccc 
-      }
-    .login-form, .register-form, .list {
-      margin-top: 20%;
-    }
 
-    .search-form {
-      margin-top: 50%;
-    }
+{% endblock %}
+{% block moreCSS %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles/searchbook.css">
+{% endblock %}
 
-    #details {
-      background-color: white;
-      margin-top: 10%;
-    }
-
-    .card-text {
-      font-style: italic;
-    }
-    @media (min-width: 768px) {
-    body {
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  }
-  </style>
-  <body>
+{% block body %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
         <a class="navbar-brand" href="/login">Book Review</a>
@@ -104,10 +24,8 @@
         </button>
         <div class="collapse navbar-collapse" id="#navbarNav">
           <ul class="navbar-nav ml-auto">
-            
-
             <li class="nav-item active">
-              <h6 class="nav-link">Welcome, {{session.firstname}}</h6>
+              <h6 class="nav-link">Welcome, {{session.name}}</h6>
             </li>
             <li class="nav-item">
               <a class="btn btn-outline-light btn-success mr-2" href="search" role="button">Search</a>
@@ -122,52 +40,56 @@
         </div>
       </div>
     </nav>
-      <div class="leftContainer">
-      <form name="searchForm" class="stacked greyBox searchBox searchBox--large" method="POST"  action="{{url_for('search')}}">
-         <div class="greyText" style="padding-bottom: 10px">
-            <input type="text" name="q" size="55" valued="" id="search_query_main" class="searchBox__input searchBox--large__input" placeholder="Search by Book Title, Author, or ISBN">
-            <!-- <input type="hidden" name="search_type" value="books"> -->
-            <input href="/search" type="submit" value="Search" class="searchBox__button searchBox--large__button"  ></button>
+    <form action="{{ url_for('search') }}" name="searchForm" class="stacked greyBox searchBox searchBox--large" method="POST">
+      <div class="greyText" style="padding-bottom: 10px">
+        <input type="text" name="comp" size="55" valued="" id="search_query_main" class="searchBox__input searchBox--large__input" placeholder="Search by Book Title, Author, year, or ISBN">
+        <input href="/search" type="submit" value="Search" class="searchBox__button searchBox--large__button" onclick="return check()"></button>
+      </div>
+        <div>
+          <label>
+            <input type="radio" checked="checked" name="search" id="search_field" /> isbn
+            <input type="radio"   value="title" name="search" id="search_field_title"  /> title
+            <input type="radio"   value="author" name="search" id="search_field_author" /> author
+            <input type="radio"   value="year" name="search" id="search_field_year" /> year
+          </label>
         </div>
-          <div>
-            <label>
-              <input type="radio" checked="checked" name="search" id="search_field" /> isbn
-              <input type="radio"   value="title" name="search" id="search_field_title"  /> title
-              <input type="radio"   value="author" name="search" id="search_field_author" /> author
-              <input type="radio"   value="year" name="search" id="search_field_year" /> year
-            </label>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <table class="table .list">
-                  <thead>
-                    <tr>
-                      <th scope="col">ISBN</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Author</th>
-                      <th scope="col">year</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for item in stat %}
-                    <tr>
-                      <td>{{item.isbn}}</td>
-                      <td>{{item.title}}</td>
-                      <td>{{item.author}}</td>
-                      <td>{{item.year}}</td>
-                      <!-- <td><a href= "details/{{item.bookid}}">Details</a></td> -->
-                    </tr>
-                    {% endfor %}
-                  </tbody>
-                  </table>
-                </div>
-                </div>
-                <div class="col-md-6 col-sm-0">
-                </div>
-              </div>
-          </div>
-      
-      </form>
-      
-  </body>
-</html>
+    </form>
+		{% if postSearch %}
+			<ul>
+		    	{% for book in data %}
+			    	<li>	
+			    		<div>
+			    			<a href="{{ url_for('bookPage', book_isbn=book.isbn) }}">{{ data.title }}</a><br>
+			    			ISBN: {{ data.isbn }}<br>
+			    			Author: {{ data.author }}<br>
+			    			Publish Year: {{ data.year }}<br>
+			    		</div>
+			    	</li>
+			   	{% else %}
+			   	<p>No books found.</p>
+			    {% endfor %}
+			</ul>
+		{% endif %}
+{% endblock %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

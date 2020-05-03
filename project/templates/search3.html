@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Bootleg Goodreads
+{% endblock %}
+{% block moreCSS %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles/search.css">
+{% endblock %}
+{% block body %}
+    <div class="landing">
+        <div class="landing-left">
+            <h1 class="Title">Book Review Website</h1>
+            <p class="Description">About Books</p>
+            <div class="buttons">
+                <p>New User? <a href="{{ url_for('register') }}">Click here to register!</a></p>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Click here to log in.</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

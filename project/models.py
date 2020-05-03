@@ -4,10 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class User(db.Model):
-	__tablename__ = 'USERS'
+	__tablename__ = 'users'
 	email = db.Column(db.String, primary_key = True)
 	name = db.Column(db.String, nullable = False)
-	password = db.Column(db.String, nullable = False)
+	pswd = db.Column(db.String, nullable = False)
 	timestamp = db.Column(db.DateTime, nullable = False)
 	
 	def __init__(self, email, name, password):
@@ -17,11 +17,12 @@ class User(db.Model):
 		self.timestamp = datetime.now()
 	
 	def __repr__(self):
-		return '<User %r>' % (self.email)
+		# return '<User %r>' % (self.email)
+		return f"User('{self.email}','{self.name}','{self.password}','{self.timestamp}')"
 
 		
 class Book(db.Model):
-    __tablename__ = "BOOKS"
+    __tablename__ = "books"
     isbn = db.Column(db.String, primary_key = True)
     title = db.Column(db.String, nullable = False)
     author = db.Column(db.String, nullable = False)

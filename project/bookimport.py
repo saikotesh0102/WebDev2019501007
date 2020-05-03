@@ -36,6 +36,7 @@ def main():
             db.session.add(book)
         i = i + 1
     db.session.commit()
+    
 
 if __name__ == "__main__":
     main()
