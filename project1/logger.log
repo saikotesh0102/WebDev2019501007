@@ -4726,3 +4726,22 @@ INFO:werkzeug:127.0.0.1 - - [03/May/2020 16:33:37] "GET /book?isbn=0553803700 HT
 DEBUG:root:User Logged out Successfully
 INFO:werkzeug:127.0.0.1 - - [03/May/2020 16:33:47] "GET /logout HTTP/1.1" 302 -
 INFO:werkzeug:127.0.0.1 - - [03/May/2020 16:33:47] "GET /login HTTP/1.1" 200 -
+DEBUG:root:database sessions created
+DEBUG:root:database sessions created
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:28] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:28] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:29] "GET /static/styles/main.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:29] "GET /static/styles/images/icon.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:29] "GET /static/styles/images/image3.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:29] "GET /favicon.ico HTTP/1.1" 404 -
+DEBUG:root:User Loggedin Successfully
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:36] "POST /auth HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:37] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:58:39] "GET /static/styles/images/image7.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 20:59:12] "GET /reviewsearch HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 21:00:55] "POST /api/userreview HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 21:01:05] "GET /reviewsearch HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2020 21:01:18] "POST /api/userreview HTTP/1.1" 500 -
+INFO:werkzeug: * Detected change in 'D:\\Study\\MSIT\\Introdution to Web Programming\\project1\\application.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:root:database sessions created
