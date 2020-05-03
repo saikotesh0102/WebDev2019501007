@@ -96,6 +96,7 @@ def logout():
     logging.debug("User Logged out Successfully")
     return redirect(url_for("login"))
 
+#this is user review route where the reviews given by user is stored
 @app.route("/userreview", methods = ["POST"])
 def user_review():
     if request.method == "POST":
@@ -115,6 +116,7 @@ def user_review():
             flash("Please Login First", "info")
             return redirect("/login")
 
+#this route displays a search bar, when searched for username or email then reviews given by user are displayed
 @app.route("/reviewsearch", methods = ["GET"])
 def review_search():
     if request.method == "GET":
@@ -124,7 +126,7 @@ def review_search():
         else :
             flash("Please Login First", "info")
             return redirect("/login")
-
+#this is the api call where the output is displayed in the same page
 @app.route("/api/userreview", methods=["POST"])
 def userReviewAPI() :
 
