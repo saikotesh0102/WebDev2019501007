@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <!-- <link rel="stylesheet" href="../static/styles/style.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Search</title>
     <style>
@@ -99,22 +98,15 @@
                 </div>
                 <div class="row">
                     <div class="col-md-7">
-                        <caption style="font-family:'Courier New';font-size:40px;font-style:italic;color:aqua;">Results for your Search..</caption>
+                        <caption><p style="font-family:'Courier New';font-size:40px;font-style:italic;color:aqua;"> Results for your Search..</p></caption>
                         <table id="searchtable" class="table" style="background-color:rgb(175, 247, 250);border: 3px solid black;">
                             <thead class="thead-dark">
                                 <tr style="border: 1px solid black;border-collapse: collapse;">
-                                    <th scope="col">ISBN</th>
-                                    <th scope="col">Title</th>
+                                    <th scope="col" style = "text-align: center;">ISBN</th>
+                                    <th scope="col" style = "text-align: center;">Title</th>
                                 </tr>
                             </thead>
-                            <tbody id = "body_results">
-                                <!-- {% for result in results %}
-                                <tr>
-                                    <td id = "ISBN"><a href="book?isbn={{result.isbn}}">{{result.isbn}}</a></td>
-                                    <td id = "title">{{result.title}}</td>
-                                </tr>
-                                {% endfor %} -->
-                            </tbody>
+                            <tbody id = "body_results"></tbody>
                         </table>
                     </div>
                 </div>

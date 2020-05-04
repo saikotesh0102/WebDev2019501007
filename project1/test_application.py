@@ -63,24 +63,5 @@ class BasicTests(unittest.TestCase):
         response = self.app.get('/register', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
-    # def test_login_invalid(self):
-    #     response = self.login('adminmsitprogram.net', 'a1dmin')
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertIn(b'Please enter valid email', response.data)
-
-    # def test_invalid_user_register(self):
-    #     response = self.register('admin@msitprogram.net', 'a1dmin')
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertIn(b'Email already registered please login', response.data)
-
-    # def test_valid_user_login(self):
-    #     response = self.login('admin@msitprogram.net', 'admin')
-    #     self.assertEqual(response.status_code, 200)
-
-    # def test_invalid_user_login(self):
-    #     response = self.login('admin@msitprogram.net', 'a1dmin')
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertIn(b'wrong password', response.data)
-
 if __name__ == "__main__":
     unittest.main()

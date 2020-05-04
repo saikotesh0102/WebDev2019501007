@@ -77,7 +77,6 @@ def verify():
             session["data"] = email
             logging.debug("User Loggedin Successfully")
             name = "Thank You for Logging In"
-            # return render_template("dashboard.html", name = name + " " + fullname)
             return redirect(url_for("search"))
     return redirect(url_for("register"))
 
@@ -162,12 +161,10 @@ def review():
             response["reviews_count"] = str(int(response["reviews_count"]) + 1)
             db.session.add(revs)
             db.session.commit()
-            # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
             return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })
         else:
             review_det.rating = rate
             review_det.review = rev
             total_rating = ((float(response["average_rating"]) * int(response["reviews_count"])) + int(rate))/(int(response["reviews_count"]) + 1)
             db.session.commit()
-            # return render_template("details.html", Name = response["name"], Author = response["author"], ISBN = response["isbn"], Year = response["year"], rating = response["average_rating"], count = response["reviews_count"], image = response["img"], button = "Edit", rating_one = rate, Review = rev, name = name, Submit = "Edit")
             return jsonify({"success" : True, "Name" : response["name"], "Author" : response["author"], "ISBN" : response["isbn"], "Year" : response["year"], "rating" : response["average_rating"], "count" : response["reviews_count"], "image" : response["img"], "button" : "Edit", "rating_one" : rate, "Review" : rev, "name" : name, "Submit" : "Edit" })

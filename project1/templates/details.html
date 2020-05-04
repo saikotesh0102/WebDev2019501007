@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>Details Page</title>
-		<!-- <link rel = "stylesheet" type = "text/css" href = "{{url_for('static',filename = 'styles/details.css')}}"> -->
 		<style>
 			select { 
                 appearance: none; 
@@ -182,9 +181,6 @@
 							document.getElementById('list').innerHTML = '';
 						}
 					}
-					// const data = new FormData();
-					// data.append('review', review);
-					// data.append('rating', rating)
 					request.send(JSON.stringify({"review" : review, "rating" : rating}));
 					return false;
 				}
@@ -245,7 +241,6 @@
 					<li id = "number" style = "font-size: 40px; font-style: italic;">Your Rating is {{rating_one}}/5</li>
 					<li id = "matter" style = "color: salmon; font-size: 30px;">{{Review}}</li>
 				</ul>
-				<!-- <p><br><br><button class="rating-btn" type="submit">Edit</button></p> -->
 			</div>
 		</div>
 	</body>
