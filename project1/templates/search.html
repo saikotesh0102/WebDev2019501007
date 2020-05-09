@@ -4,110 +4,82 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="static/styles/search.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>bookview</title>
-  </head>
-  <style>
-      body {
-        background: url("download.jpg") no-repeat center center fixed;
-      }
-      .search form img{
-                    margin:2px 0 0 2px
+    <script>
+      function search_validate() {
+        // alert("example");
+        var name = document.forms["searchid"]["searchele"].value;
+        console.log("name");
+
+        if (name == "") {
+          document.querySelector('#searchbox').innerHTML = "You can't leave search bar empty";
+          return false;
+        }
+        const request = new XMLHttpRequest();
+        request.open("POST", "/api/search");
+        request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        request.onload = () => {             
+
+        const response = JSON.parse(request.responseText);
+
+        if (request.status === 200) {
+
+          response.books.forEach(book => {
+                    
+            document.querySelector('#load').innerHTML = ""
+                    
+                    let content = `
+        
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="margin-top: 4%;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Title</h5>
+                                        <p class="card-text"><b>${book.title}</b></p>
+                                        <button type="submit" class="btn btn-primary" style="width: 150px;" onclick="book(${book.isbn})">Review</button>
+                                    </div>
+                            </div>
+                            
+                            `;
+
+                    document.querySelector('#Bookss').innerHTML += content
+
+                }); 
+
+                } else if (request.status === 404) {
+                    document.querySelector('#load').innerHTML = "<br><b>No Results found<b>";
                 }
-      .searchBox__input{
-          border:1px solid #D8D8D8;
-          border-radius:3px;
-          font-family:"Lato", "Helvetica Neue", "Helvetica", sans-serif;
-          font-size:14px;
-          padding:8px 26px 8px 8px;
-          width:100%
-      }
-      .searchBox--large{
-          border-radius:3px;
-          padding:10px;
-          margin-bottom:12px
-      }
-      .searchBox--large__input {
-          float:left;
-          font-size:14px;
-          -moz-box-sizing:border-box;
-          -webkit-box-sizing:border-box;
-          box-sizing:border-box;
-          padding:5px;
-          height:31px;
-          width:80%
-      }
-      .searchBox--large__button { 
-          border-radius:3px;
-          border:1px solid #D6D0C4;
-          font-family:"Lato", "Helvetica Neue", "Helvetica", sans-serif;
-          font-size:14px;
-          -moz-appearance:none;
-          -o-appearance:none;
-          -webkit-appearance:none;
-          appearance:none;
-          cursor:pointer;
-          display:inline-block;
-          text-decoration:none;
-          color:#333333;
-          background-color:#F4F1EA;
-          line-height:1;
-          padding:8px 12px;
-          margin-left:5px
-      }
-      .searchBox--large__button:hover{
-          color:#333333;
-          background-color:#ede6d6;
-          text-decoration:none
-      }
-      .searchBox--large__button:active{
-          background-color:#D6D0C4}
-      .searchBox--large__button:disabled {
-          background-color:#F3F3F3;
-          color:#cccccc 
-      }
-    .login-form, .register-form, .list {
-      margin-top: 20%;
-    }
+                    
+            }
 
-    .search-form {
-      margin-top: 50%;
-    }
+            const jsonData = JSON.stringify({"search_validate" : value})
+            request.send(jsonData);
+            return false;
+        }
 
-    #details {
-      background-color: white;
-      margin-top: 10%;
-    }
+        function login() {
+            alert("Login")
+        }
 
-    .card-text {
-      font-style: italic;
-    }
-    @media (min-width: 768px) {
-    body {
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  }
-  </style>
+        // function book(isbn) {
+        //     alert(isbn)
+        // }
+    </script>
+  </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
-        <a class="navbar-brand" href="/login">Book Review</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <p class="navbar-brand">Book Review</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="#navbarNav">
           <ul class="navbar-nav ml-auto">
-            
-
             <li class="nav-item active">
-              <h6 class="nav-link">Welcome, {{session.firstname}}</h6>
+              <h6 class="nav-link">Welcome, {{session.name}}</h6>
             </li>
             <li class="nav-item">
               <a class="btn btn-outline-light btn-success mr-2" href="search" role="button">Search</a>
@@ -122,22 +94,23 @@
         </div>
       </div>
     </nav>
-      <div class="leftContainer">
-      <form name="searchForm" class="stacked greyBox searchBox searchBox--large" method="POST"  action="{{url_for('search')}}">
+    <div class="leftContainer">
+      <form name="searchForm" id="searchid" class="stacked greyBox searchBox searchBox--large" method="POST"  action="{{url_for('search')}}">
          <div class="greyText" style="padding-bottom: 10px">
-            <input type="text" name="q" size="55" valued="" id="search_query_main" class="searchBox__input searchBox--large__input" placeholder="Search by Book Title, Author, or ISBN">
+            <input type="text"  id = "searchele" name="comp" size="55"  class="searchBox__input searchBox--large__input" placeholder="Search by Book Title, Author, or ISBN">
             <!-- <input type="hidden" name="search_type" value="books"> -->
-            <input href="/search" type="submit" value="Search" class="searchBox__button searchBox--large__button"  ></button>
+            <input type="submit" value="Search" id="search_query_main" onclick="search_validate();" class="searchBox__button searchBox--large__button"  ></button>
+            <div id="searchbox"></div>
         </div>
           <div>
-            <label>
+            <label name="searchtype">
               <input type="radio" checked="checked" name="search" id="search_field" /> isbn
               <input type="radio"   value="title" name="search" id="search_field_title"  /> title
               <input type="radio"   value="author" name="search" id="search_field_author" /> author
-              <input type="radio"   value="year" name="search" id="search_field_year" /> year
             </label>
+        </form>
             <div class="container">
-              <div class="row">
+              <div class="row" id ="load">
                 <div class="col-md-6 col-sm-12">
                   <table class="table .list">
                   <thead>
@@ -149,9 +122,9 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for item in stat %}
+                    {% for item in data %}
                     <tr>
-                      <td>{{item.isbn}}</td>
+                      <td> <a href="{{''.join(['/book/isbn=',item.isbn])}}">{{item.isbn}}</a></td>
                       <td>{{item.title}}</td>
                       <td>{{item.author}}</td>
                       <td>{{item.year}}</td>

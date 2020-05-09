@@ -10,18 +10,18 @@ class User(db.Model):
 	password = db.Column(db.String, nullable = False)
 	timestamp = db.Column(db.DateTime, nullable = False)
 	
-	def __init__(self, email, name, password):
+	def __init__(self, email, name, password,timestamp):
 		self.email = email
 		self.name = name
 		self.password = password
-		self.timestamp = datetime.now()
+		self.timestamp = timestamp
 	
-	def __repr__(self):
-		return '<User %r>' % (self.email)
+	# def __repr__(self):
+	# 	return '<User %r>' % (self.email)
 
 		
 class Book(db.Model):
-    __tablename__ = "BOOKS"
+    __tablename__ = "BOOKSS"
     isbn = db.Column(db.String, primary_key = True)
     title = db.Column(db.String, nullable = False)
     author = db.Column(db.String, nullable = False)
@@ -34,5 +34,5 @@ class Book(db.Model):
         self.year = year
 
 # db.create_all()
-def __repr__(self):
-     return '<Book %r>' % (self.name)
+	# def __repr__(self):
+	# 	return '<Book %r>' % (self.name)
